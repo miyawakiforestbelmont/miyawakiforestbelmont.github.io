@@ -33,7 +33,7 @@ function About() {
                   <MapPin className="detail-icon" />
                   <div>
                     <strong>Location:</strong>
-                    <p>Your Local School Campus</p>
+                    <p>Belmont High School, MA</p>
                   </div>
                 </div>
                 <div className="detail-item">
