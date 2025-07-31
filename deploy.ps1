@@ -14,6 +14,8 @@ Write-Host "Cleaning up old built files..." -ForegroundColor Yellow
 if (Test-Path "assets") {
     Remove-Item "assets\index-*.js" -Force -ErrorAction SilentlyContinue
     Remove-Item "assets\index-*.css" -Force -ErrorAction SilentlyContinue
+    Remove-Item "assets\logo-*.png" -Force -ErrorAction SilentlyContinue
+    Remove-Item "assets\mainpic-*.png" -Force -ErrorAction SilentlyContinue
 }
 Remove-Item "index.html" -Force -ErrorAction SilentlyContinue
 Remove-Item "vite.svg" -Force -ErrorAction SilentlyContinue
