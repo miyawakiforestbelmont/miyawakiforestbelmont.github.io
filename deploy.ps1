@@ -20,7 +20,7 @@ Copy-Item -Path "dist\*" -Destination "." -Recurse -Force
 
 Write-Host "Committing changes..." -ForegroundColor Green
 git add .
-git commit -m "Deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+git commit -m "Deploy: Updating website with latest changes"
 
 Write-Host "Pushing to GitHub..." -ForegroundColor Green
 git push origin master
