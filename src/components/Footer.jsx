@@ -9,7 +9,7 @@ function Footer() {
           <div className="footer-section">
             <div className="footer-logo">
               <img src={logo} alt="Miyawaki Forest Action Logo" style={{ height: '32px', width: 'auto' }} />
-              <span>Miyawaki Forest Action</span>
+              <span> Belmont</span>
             </div>
             <p className="footer-description">
               Creating native forests for a sustainable future through community-driven environmental action.
@@ -29,8 +29,8 @@ function Footer() {
           <div className="footer-section">
             <h4>Get Involved</h4>
             <ul className="footer-links">
-              <li><a href="https://aalslasq.donorsupport.co/page/httpsbio4climateorgm" target="_blank" rel="noopener noreferrer">Donate Now</a></li>
-              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform" target="_blank" rel="noopener noreferrer">Volunteer</a></li>
+              <li><a href="https://aalslasq.donorsupport.co/page/httpsbio4climateorgm" target="_blank" rel="noopener noreferrer">Donate To Support Our Forest</a></li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform" target="_blank" rel="noopener noreferrer">Join Us As a Volunteer</a></li>
               <li><a href="/updates">Latest Updates</a></li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Miyawaki Forest Action. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Miyawaki Forest Action Belmont. All rights reserved.</p>
           <p>Built with 💚 for a greener future</p>
         </div>
       </div>

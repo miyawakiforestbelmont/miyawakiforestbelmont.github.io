@@ -22,7 +22,7 @@ function Header() {
           <div className="nav-content">
             <Link to="/" className="logo">
               <img src={logo} alt="Miyawaki Forest Action Logo" className="logo-image" />
-              <span>Miyawaki Forest Action</span>
+              <span>Miyawaki Forest Action Belmont</span>
             </Link>
             
             <div className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}>

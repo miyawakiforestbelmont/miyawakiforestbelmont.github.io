@@ -35,15 +35,15 @@ function Home() {
             </div>
             <div className="hero-text">
               <h1>Miyawaki Forest Action</h1>
-              <p className="subtitle">Bringing Native Forests to Life in Our Community</p>
+              <p className="subtitle">Join the Movement, Boosting Biodiversity In Belmont!</p>
               <div className="cta-buttons">
                 <button onClick={handleDonateClick} className="btn btn-primary">
                   <ExternalLink size={20} />
-                  Donate Now
+                  Donate To Support Our Forest
                 </button>
                 <button onClick={handleVolunteerClick} className="btn btn-secondary">
                   <ExternalLink size={20} />
-                  Volunteer
+                  Join Us As a Volunteer
                 </button>
               </div>
             </div>

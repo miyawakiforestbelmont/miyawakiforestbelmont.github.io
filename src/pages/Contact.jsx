@@ -30,7 +30,7 @@ function Contact() {
         <div className="container">
           <div className="hero-content">
             <h1>Contact Us</h1>
-            <p className="subtitle">Get in touch with the Miyawaki Forest Action team</p>
+            <p className="subtitle">Get in touch with the Miyawaki Forest Action Belmont team</p>
           </div>
         </div>
       </section>
