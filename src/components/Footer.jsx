@@ -1,5 +1,4 @@
 import { Mail, Github, Twitter, Facebook } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 function Footer() {
   return (
@@ -8,7 +7,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <img src={logo} alt="Miyawaki Forest Action Logo" style={{ height: '32px', width: 'auto' }} />
+              <img src="/logo.png" alt="Miyawaki Forest Action Logo" style={{ height: '32px', width: 'auto' }} />
               <span> Belmont</span>
             </div>
             <p className="footer-description">

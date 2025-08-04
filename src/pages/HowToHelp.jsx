@@ -215,7 +215,7 @@ function HowToHelp() {
           <div className="card" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
             <h2>Your Impact</h2>
             <p>
-              When you support the Miyawaki Forest Action, you're not just planting trees – 
+              When you support Miyawaki Forest Action Belmont, you're not just planting trees – 
               you're creating a lasting legacy for our community. This forest will serve as 
               an educational resource, a carbon sink, a wildlife habitat, and a symbol of 
               what we can achieve when we work together for environmental sustainability.

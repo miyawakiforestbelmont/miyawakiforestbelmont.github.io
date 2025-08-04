@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ExternalLink, Users, TreePine, Target } from 'lucide-react';
-import mainPic from '../assets/mainpic.png';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('info');
@@ -27,14 +26,14 @@ function Home() {
           <div className="hero-content">
             <div className="hero-image-container">
               <img 
-                src={mainPic} 
+                src="/mainpic.png" 
                 alt="Community members gathered around the forest site" 
                 className="hero-image"
               />
               <p className="hero-caption">Community members outlining the upcoming shape of the mini-forest! Photo by David Mussina</p>
             </div>
             <div className="hero-text">
-              <h1>Miyawaki Forest Action</h1>
+              <h1>Miyawaki Forest Action Belmont</h1>
               <p className="subtitle">Join the Movement, Boosting Biodiversity In Belmont!</p>
               <div className="cta-buttons">
                 <button onClick={handleDonateClick} className="btn btn-primary">

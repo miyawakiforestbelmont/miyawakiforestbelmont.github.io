@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +20,7 @@ function Header() {
         <div className="container">
           <div className="nav-content">
             <Link to="/" className="logo">
-              <img src={logo} alt="Miyawaki Forest Action Logo" className="logo-image" />
+              <img src="/logo.png" alt="Miyawaki Forest Action Logo" className="logo-image" />
               <span>Miyawaki Forest Action Belmont</span>
             </Link>
             
