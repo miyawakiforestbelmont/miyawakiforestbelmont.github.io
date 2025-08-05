@@ -6,6 +6,7 @@ function Home() {
 
   const tabs = [
     { id: 'info', label: 'Miyawaki Forest Info', icon: <TreePine size={20} /> },
+    { id: 'location', label: 'Where To Find It', icon: <Target size={20} /> },
     { id: 'updates', label: 'Updates & Events', icon: <Target size={20} /> },
     { id: 'about', label: 'Who We Are & Supporters', icon: <Users size={20} /> },
   ];
@@ -30,7 +31,7 @@ function Home() {
                 alt="Community members gathered around the forest site" 
                 className="hero-image"
               />
-              <p className="hero-caption">Community members outlining the upcoming shape of the mini-forest! Photo by David Mussina</p>
+              <p className="hero-caption"><span style={{fontStyle: 'italic'}}>Community members outlining the upcoming shape of the mini-forest!</span> <br />Photo by David Mussina</p>
             </div>
             <div className="hero-text">
               <h1>Miyawaki Forest Action Belmont</h1>
@@ -46,6 +47,17 @@ function Home() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Planting Day Section */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="card" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+            <h2>Community Planting Day</h2>
+            <p>Join us for our upcoming community planting event! Details coming soon...</p>
+            {/* More content will be added here later */}
           </div>
         </div>
       </section>
@@ -80,21 +92,74 @@ function Home() {
                         They sequester carbon in the soil, reduce air pollution and soil contamination, improve water absorption to buffer against flooding and erosion, and cool the surrounding area to mitigate the urban heat island effect. They also create a living classroom for people and communities to learn about native ecology, engage in stewardship, and experience the interconnectedness of the natural world.
                       </p>
                     </div>
-                    <div className="benefits-list">
+                    <div className="benefits-section">
                       <h3>Benefits:</h3>
-                      <ul>
-                        <li><strong>Rapid Growth:</strong> 10x faster than conventional forests</li>
-                        <li><strong>High Density:</strong> 30x denser vegetation</li>
-                        <li><strong>Self-Sustaining:</strong> No maintenance after 2-3 years</li>
-                        <li><strong>Biodiversity:</strong> Supports native wildlife</li>
-                        <li><strong>Carbon Capture:</strong> Excellent CO₂ absorption</li>
-                        <li><strong>Community Impact:</strong> Educational and environmental benefits</li>
-                      </ul>
+                      <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                        <ul className="benefits-list" style={{ flex: '1', margin: '0' }}>
+                          <li><strong>Rapid Growth:</strong> 10x faster than conventional forests</li>
+                          <li><strong>High Density:</strong> 30x denser vegetation</li>
+                          <li><strong>Self-Sustaining:</strong> No maintenance after 2-3 years</li>
+                          <li><strong>Biodiversity:</strong> Supports native wildlife</li>
+                          <li><strong>Carbon Capture:</strong> Excellent CO₂ absorption</li>
+                          <li><strong>Community Impact:</strong> Educational and environmental benefits</li>
+                        </ul>
+                        <img 
+                          src="/forestbenefits.png" 
+                          alt="Forest benefits illustration" 
+                          style={{ 
+                            width: '600px', 
+                            height: 'auto', 
+                            borderRadius: '8px',
+                            flexShrink: 0,
+                            marginTop: '-3rem'
+                          }} 
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               )}
-              
+
+              {activeTab === 'location' && (
+                <div className="tab-panel">
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                    <div style={{ flex: '1' }}>
+                      <img 
+                        src="/3dview.png" 
+                        alt="3D view of forest location" 
+                        style={{ 
+                          width: '100%', 
+                          maxWidth: '830px',
+                          height: 'auto', 
+                          borderRadius: '8px',
+                          marginBottom: '1rem'
+                        }} 
+                      />
+                      <div style={{fontSize: '1.2rem', lineHeight: '1.5'}}>
+                        <p>
+                          Mini-forest with surrounding mantle of perennials. North and south native plant gardens outlined in blue.
+                        </p>
+                        <p>
+                          Belmont High School's front lawn
+                          <br />
+                          221 Concord Ave, Belmont MA 02478
+                        </p>
+                      </div>
+                    </div>
+                    <img 
+                      src="/2dview.png" 
+                      alt="2D view of forest location" 
+                      style={{ 
+                        width: '250px', 
+                        height: '400px', 
+                        borderRadius: '8px',
+                        flexShrink: 0,
+                      }} 
+                    />
+                  </div>
+                </div>
+              )}
+
               {activeTab === 'updates' && (
                 <div className="tab-panel">
                   <h2>Latest Updates & Upcoming Events</h2>
@@ -138,7 +203,7 @@ function Home() {
                     <div>
                       <h3>Our Team</h3>
                       <p>
-                        The Miyawaki Forest Action is led by a dedicated team of educators, environmental 
+                        The Miyawaki Forest Action Belmont is led by a dedicated team of educators, environmental 
                         scientists, community organizers, and passionate volunteers committed to creating 
                         positive environmental change in our community.
                       </p>

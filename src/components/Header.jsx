@@ -8,9 +8,8 @@ function Header() {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/gallery', label: 'Gallery' },
     { path: '/updates', label: 'Updates' },
+    { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -20,7 +19,7 @@ function Header() {
         <div className="container">
           <div className="nav-content">
             <Link to="/" className="logo">
-              <img src="/logo.png" alt="Miyawaki Forest Action Logo" className="logo-image" />
+              <img src="/logo.png" alt="Miyawaki Forest Action Belmont Logo" className="logo-image" />
               <span>Miyawaki Forest Action Belmont</span>
             </Link>
             

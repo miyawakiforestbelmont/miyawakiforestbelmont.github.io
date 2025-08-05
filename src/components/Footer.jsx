@@ -7,8 +7,8 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <img src="/logo.png" alt="Miyawaki Forest Action Logo" style={{ height: '32px', width: 'auto' }} />
-              <span> Belmont</span>
+              <img src="/logo.png" alt="Miyawaki Forest Action Belmont Logo" style={{ height: '32px', width: 'auto' }} />
+              <span>Miyawaki Forest Action Belmont</span>
             </div>
             <p className="footer-description">
               Creating native forests for a sustainable future through community-driven environmental action.
