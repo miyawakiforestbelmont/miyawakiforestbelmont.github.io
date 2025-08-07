@@ -1,22 +1,24 @@
 :root {
   /* New Color Palette */
-  --dark-teal: #1B2F33;
-  --forest-green: #28502E;
-  --sage-green: #47682C;
-  --earth-brown: #8C7051;
+  --dark-teal: #1b2f33;
+  --forest-green: #28502e;
+  --sage-green: #47682c;
+  --earth-brown: #8c7051;
   --white: #ffffff;
   --light-gray: #f8f9fa;
-  --text-dark: #1B2F33;
-  --text-light: #47682C;
-  
-  font-family: 'Source Sans Pro', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --text-dark: #1b2f33;
+  --text-light: #47682c;
+
+  font-family: "Source Sans Pro", "Open Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  
+  font-size: 18px; /* Increased base font size from default 16px */
+
   color-scheme: light;
   color: var(--text-dark);
   background-color: var(--white);
-  
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,9 +34,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   background-color: var(--white);
   color: var(--text-dark);
+  font-size: 18px; /* Explicitly set body font size */
 }
 
 #root {
@@ -43,7 +46,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--forest-green);
   font-weight: 600;
   line-height: 1.2;
@@ -51,16 +59,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem; /* Increased from 3rem */
   font-weight: 700;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Increased from 2.5rem */
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.25rem; /* Increased from 2rem */
 }
 
 p {
@@ -77,9 +85,9 @@ p {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.125rem; /* Increased from 1rem */
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -127,6 +135,20 @@ p {
   padding: 0 1rem;
 }
 
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* Sections */
 section {
   padding: 4rem 0;
@@ -155,8 +177,8 @@ section {
   padding: 0.75rem;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem; /* Increased from 1rem */
   transition: border-color 0.3s ease;
 }
 
@@ -210,23 +232,29 @@ section {
   .container {
     padding: 0 1rem;
   }
-  
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Increased from 2.5rem */
   }
-  
+
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increased from 2rem */
   }
-  
+
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Increased from 1.5rem */
   }
-  
+
   section {
     padding: 3rem 0;
   }
-  
+
   .card {
     padding: 1.5rem;
   }
@@ -234,15 +262,15 @@ section {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.25rem; /* Increased from 2rem */
   }
-  
+
   h2 {
-    font-size: 1.75rem;
+    font-size: 2rem; /* Increased from 1.75rem */
   }
-  
+
   .btn {
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased from 0.9rem */
   }
 }

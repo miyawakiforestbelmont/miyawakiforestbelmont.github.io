@@ -1,4 +1,4 @@
-import { TreePine, MapPin, Calendar, Users } from 'lucide-react';
+import { TreePine, MapPin, Calendar, Users } from "lucide-react";
 
 function About() {
   return (
@@ -8,7 +8,9 @@ function About() {
         <div className="container">
           <div className="hero-content">
             <h1>About the Miyawaki Forest Project</h1>
-            <p className="subtitle">Creating a native forest ecosystem for future generations</p>
+            <p className="subtitle">
+              Creating a native forest ecosystem for future generations
+            </p>
           </div>
         </div>
       </section>
@@ -20,10 +22,21 @@ function About() {
             <div>
               <h2>What is a Miyawaki Forest?</h2>
               <p>
-                The Miyawaki Forest is an ultra dense, biodiverse pocket forest that recreates the complexity of natural forests and the relationships and processes that help them grow strong and resilient. By giving home to a vast array of native species, they boost the biodiversity of the area and nurture pollinators, supporting and restoring ecosystems.
+                The Miyawaki Forest is an ultra dense, biodiverse pocket forest
+                that recreates the complexity of natural forests and the
+                relationships and processes that help them grow strong and
+                resilient. By giving home to a vast array of native species,
+                they boost the biodiversity of the area and nurture pollinators,
+                supporting and restoring ecosystems.
               </p>
               <p>
-                They sequester carbon in the soil, reduce air pollution and soil contamination, improve water absorption to buffer against flooding and erosion, and cool the surrounding area to mitigate the urban heat island effect. They also create a living classroom for people and communities to learn about native ecology, engage in stewardship, and experience the interconnectedness of the natural world.
+                They sequester carbon in the soil, reduce air pollution and soil
+                contamination, improve water absorption to buffer against
+                flooding and erosion, and cool the surrounding area to mitigate
+                the urban heat island effect. They also create a living
+                classroom for people and communities to learn about native
+                ecology, engage in stewardship, and experience the
+                interconnectedness of the natural world.
               </p>
             </div>
             <div className="card">
@@ -71,21 +84,51 @@ function About() {
             <div className="card">
               <h3>Environmental Benefits</h3>
               <ul>
-                <li><strong>Air Quality:</strong> Trees filter pollutants and produce oxygen</li>
-                <li><strong>Carbon Capture:</strong> Dense forests absorb significant CO₂</li>
-                <li><strong>Biodiversity:</strong> Native species support local wildlife</li>
-                <li><strong>Soil Health:</strong> Root systems prevent erosion and improve soil</li>
-                <li><strong>Climate Control:</strong> Natural cooling and humidity regulation</li>
+                <li>
+                  <strong>Air Quality:</strong> Trees filter pollutants and
+                  produce oxygen
+                </li>
+                <li>
+                  <strong>Carbon Capture:</strong> Dense forests absorb
+                  significant CO₂
+                </li>
+                <li>
+                  <strong>Biodiversity:</strong> Native species support local
+                  wildlife
+                </li>
+                <li>
+                  <strong>Soil Health:</strong> Root systems prevent erosion and
+                  improve soil
+                </li>
+                <li>
+                  <strong>Climate Control:</strong> Natural cooling and humidity
+                  regulation
+                </li>
               </ul>
             </div>
             <div className="card">
               <h3>Educational Impact</h3>
               <ul>
-                <li><strong>Living Laboratory:</strong> Students study real ecosystem development</li>
-                <li><strong>Environmental Awareness:</strong> Hands-on conservation experience</li>
-                <li><strong>Community Pride:</strong> Shared ownership of environmental progress</li>
-                <li><strong>STEM Learning:</strong> Biology, ecology, and environmental science</li>
-                <li><strong>Responsibility:</strong> Caring for our local environment</li>
+                <li>
+                  <strong>Living Laboratory:</strong> Students study real
+                  ecosystem development
+                </li>
+                <li>
+                  <strong>Environmental Awareness:</strong> Hands-on
+                  conservation experience
+                </li>
+                <li>
+                  <strong>Community Pride:</strong> Shared ownership of
+                  environmental progress
+                </li>
+                <li>
+                  <strong>STEM Learning:</strong> Biology, ecology, and
+                  environmental science
+                </li>
+                <li>
+                  <strong>Responsibility:</strong> Caring for our local
+                  environment
+                </li>
               </ul>
             </div>
           </div>
@@ -100,22 +143,25 @@ function About() {
             <div className="card">
               <h3>Native Species Selection</h3>
               <p>
-                We carefully select indigenous tree and shrub species that naturally occur in our region. 
-                This ensures the forest is perfectly adapted to local climate, soil, and wildlife.
+                We carefully select indigenous tree and shrub species that
+                naturally occur in our region. This ensures the forest is
+                perfectly adapted to local climate, soil, and wildlife.
               </p>
             </div>
             <div className="card">
               <h3>Multi-Layer Planting</h3>
               <p>
-                Trees are planted in four layers: shrub, sub-tree, tree, and canopy layers. This mimics 
-                natural forest structure and maximizes biodiversity and space utilization.
+                Trees are planted in four layers: shrub, sub-tree, tree, and
+                canopy layers. This mimics natural forest structure and
+                maximizes biodiversity and space utilization.
               </p>
             </div>
             <div className="card">
               <h3>Dense Plantation</h3>
               <p>
-                Saplings are planted 3-5 times denser than normal, creating competition that drives 
-                rapid vertical growth and natural selection of the strongest trees.
+                Saplings are planted 3-5 times denser than normal, creating
+                competition that drives rapid vertical growth and natural
+                selection of the strongest trees.
               </p>
             </div>
           </div>
@@ -130,54 +176,54 @@ function About() {
             <div className="timeline-item">
               <div className="timeline-content">
                 <h3>Planning Phase</h3>
-                <p><strong>Spring 2025</strong></p>
-                <p>Site selection, soil analysis, native species research, and community engagement.</p>
+                <p>
+                  <strong>Spring 2025</strong>
+                </p>
+                <p>
+                  Site selection, soil analysis, native species research, and
+                  community engagement.
+                </p>
               </div>
               <div className="timeline-dot"></div>
             </div>
             <div className="timeline-item">
               <div className="timeline-content">
                 <h3>Preparation</h3>
-                <p><strong>Summer 2025</strong></p>
-                <p>Soil preparation, fundraising completion, volunteer training, and sapling procurement.</p>
+                <p>
+                  <strong>Summer 2025</strong>
+                </p>
+                <p>
+                  Soil preparation, fundraising completion, volunteer training,
+                  and sapling procurement.
+                </p>
               </div>
               <div className="timeline-dot"></div>
             </div>
             <div className="timeline-item">
               <div className="timeline-content">
                 <h3>Planting Event</h3>
-                <p><strong>Fall 2025</strong></p>
-                <p>Community planting day with students, families, and volunteers working together.</p>
+                <p>
+                  <strong>Fall 2025</strong>
+                </p>
+                <p>
+                  Community planting day with students, families, and volunteers
+                  working together.
+                </p>
               </div>
               <div className="timeline-dot"></div>
             </div>
             <div className="timeline-item">
               <div className="timeline-content">
                 <h3>Growth & Monitoring</h3>
-                <p><strong>2026-2028</strong></p>
-                <p>Regular maintenance, growth monitoring, and educational programs for students.</p>
+                <p>
+                  <strong>2026-2028</strong>
+                </p>
+                <p>
+                  Regular maintenance, growth monitoring, and educational
+                  programs for students.
+                </p>
               </div>
               <div className="timeline-dot"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h3>Learn More About Miyawaki Forests</h3>
-            <ul>
-              <li>Our main <a href="https://bio4climate.org/miyawaki-forest-program/" target="_blank" rel="noopener noreferrer">Miyawaki Forest Program</a> page</li>
-              <li>Bio4Climate's <a href="https://www.youtube.com/playlist?list=PLsWWRqCX9eSaeVvsc-zUsK4HPt0enmRcc" target="_blank" rel="noopener noreferrer">Miyawaki Forest video playlist</a></li>
-              <li>'<a href="https://www.csmonitor.com/Environment/2023/0922/Miyawaki-A-little-forest-with-a-towering-task-video" target="_blank" rel="noopener noreferrer">A Little Forest with a Towering Task</a>' – Short documentary on the Miyawaki planting process and the 'grounded hope' behind the work</li>
-              <li>'<a href="https://www.nytimes.com/2023/08/24/climate/tiny-forests-climate-miyawaki.html?unlocked_article_code=S_xwWpdQcIVJSDpMaNcyo-EH_Y2Lw6tOH6xwX_NE6AwkO_FWy8YH_hJdLatSfnn70lg8twstZFrav63MlEM9pPc3d6092cif7kGnuhiFYu8NzMbHBdgveuElb7HdfFvnhIAV_hsq9oaiWB6w00t92Drj7pbUnnzbP-oGoRY4sr0Kx5BXcr0VCLzL7CYXyvYfIoBcZVe9h_9MKEl9f-yEcz_Li0NKOGKr7Bmuch0m6RkWl3sd6AK0WKXd6joit-Q3tAJlQdA-EozMxnFNbRGedk_Iwtq_XUlOUzNuaBELtI6OvvoxJOCl1UVvKsY3KoBg3PCn1xNZmmwtdW8FIDBN_kx5BfQY-WU&smid=url-share" target="_blank" rel="noopener noreferrer">Tiny Forests with Big Benefits</a>' – A feature of our Cambridge forests and other Miyawaki plantings in <em>The New York Times</em></li>
-              <li><em><a href="https://www.chelseagreen.com/product/mini-forest-revolution/" target="_blank" rel="noopener noreferrer">Mini-Forest Revolution: Using the Miyawaki Method to Rapidly Rewild the World</a></em> by Hannah Lewis, published by Chelsea Green in June 2022</li>
-            </ul>
-            <div className="contact-info" style={{ textAlign: 'center', marginTop: '30px' }}>
-              <h4>Contact Us</h4>
-              <p>Email: <a href="mailto:info@miyawakiforestaction.org">info@miyawakiforestaction.org</a></p>
             </div>
           </div>
         </div>

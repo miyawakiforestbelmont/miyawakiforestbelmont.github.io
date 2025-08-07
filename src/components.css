@@ -19,6 +19,90 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+}
+
+/* Search Styles */
+.search-container {
+  position: relative;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--forest-green);
+  box-shadow: 0 0 0 3px rgba(40, 80, 46, 0.1);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--sage-green);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: var(--light-gray);
+}
+
+.search-result-title {
+  font-weight: 600;
+  color: var(--forest-green);
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.search-result-section {
+  font-size: 0.875rem;
+  color: var(--text-light);
 }
 
 .logo {
@@ -28,7 +112,7 @@
   text-decoration: none;
   color: var(--forest-green);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.375rem; /* Increased from 1.2rem */
   transition: color 0.3s ease;
 }
 
@@ -92,7 +176,7 @@
 .footer-section h4 {
   color: var(--sage-green);
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem; /* Increased from 1.1rem */
 }
 
 .footer-logo {
@@ -101,7 +185,7 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.375rem; /* Increased from 1.2rem */
   color: var(--sage-green);
 }
 
@@ -159,7 +243,7 @@
 
 .footer-bottom p {
   margin: 0.25rem 0;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem */
 }
 
 /* Contact Page Styles */
@@ -258,10 +342,22 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .nav-content {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .search-container {
+    order: 3;
+    width: 100%;
+    min-width: auto;
+    margin-top: 1rem;
+  }
+
   .nav-toggle {
     display: block;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 100%;
@@ -276,29 +372,44 @@
     visibility: hidden;
     transition: all 0.3s ease;
   }
-  
+
   .nav-menu-open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  
+
   .nav-link {
     padding: 1rem;
     text-align: center;
     border-bottom: 1px solid rgba(45, 90, 61, 0.1);
   }
-  
+
   .nav-link:last-child {
     border-bottom: none;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .social-links {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    min-width: auto;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem 0.6rem 2.5rem;
+  }
+
+  .search-icon {
+    left: 0.8rem;
   }
 }
