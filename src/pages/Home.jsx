@@ -134,7 +134,7 @@ function Home() {
               {activeTab === "info" && (
                 <div className="tab-panel" id="info">
                   <h2>What is a Miyawaki Forest?</h2>
-                  <div className="grid grid-2">
+                  <div className="gridz grid-2z">
                     <div>
                       <p>
                         The Miyawaki Forest is an ultra dense, biodiverse pocket
@@ -330,7 +330,7 @@ function Home() {
 
               {activeTab === "about" && (
                 <div className="tab-panel">
-                  <div className="grid grid-2">
+                  <div className="gridz grid-2z">
                     <div>
                       <h3>Testimonials</h3>
 
