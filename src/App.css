@@ -331,16 +331,35 @@ main {
   position: relative;
 }
 
+.fullscreen-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
 .modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
+  background: rgba(0, 0, 0, 0.7);
   border: none;
-  font-size: 2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  color: var(--text-light);
-  z-index: 1;
+  color: white;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .modal-body {

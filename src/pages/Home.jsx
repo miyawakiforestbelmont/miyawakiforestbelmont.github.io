@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { ExternalLink, Users, TreePine, Target } from "lucide-react";
+import { ExternalLink, Users, TreePine, Target, X } from "lucide-react";
 
 function Home() {
   const [activeTab, setActiveTab] = useState("info");
+  const [fullscreenImage, setFullscreenImage] = useState(null);
 
   const tabs = [
     { id: "info", label: "Miyawaki Forest Info", icon: <TreePine size={20} /> },
@@ -22,6 +23,14 @@ function Home() {
       "https://docs.google.com/forms/d/e/1FAIpQLScRDSFIKrJNC6zxtKziQb_s1JcpBHgwy1k5pStNhDgsBQfy3g/viewform",
       "_blank"
     );
+  };
+
+  const openFullscreen = (imageSrc, altText) => {
+    setFullscreenImage({ src: imageSrc, alt: altText });
+  };
+
+  const closeFullscreen = () => {
+    setFullscreenImage(null);
   };
 
   return (
@@ -72,7 +81,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       {/* Community Planting Day Section */}
       <section className="section-alt">
         <div className="container">
@@ -109,7 +117,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       {/* Tabbed Content Section */}
       <section>
         <div className="container">
@@ -137,27 +144,54 @@ function Home() {
                   <div className="gridz grid-2z">
                     <div>
                       <p>
-                        The Miyawaki Forest is an ultra dense, biodiverse pocket
-                        forest that recreates the complexity of natural forests
-                        and the relationships and processes that help them grow
-                        strong and resilient. By giving home to a vast array of
-                        native species, they boost the biodiversity of the area
-                        and nurture pollinators, supporting and restoring
-                        ecosystems.
+                        A Miyawaki Forest is a dense planting of native trees
+                        and shrubs using Dr. Miyawaki's methods to recreate old
+                        growth forests. By amending the soil and planting the
+                        seedlings closely together in an area the size of a
+                        small swimming pool, the forest grows in a third of the
+                        usual time.
                       </p>
                       <p>
-                        They sequester carbon in the soil, reduce air pollution
-                        and soil contamination, improve water absorption to
-                        buffer against flooding and erosion, and cool the
-                        surrounding area to mitigate the urban heat island
-                        effect. They also create a living classroom for people
-                        and communities to learn about native ecology, engage in
-                        stewardship, and experience the interconnectedness of
-                        the natural world.
+                        The native trees create an ecosystem that accelerates
+                        the plants' growth and provides a biodiverse habitat for
+                        native pollinators.
+                      </p>
+                      <p
+                        style={{
+                          fontStyle: "italic",
+                          borderLeft: "4px solid #ccc",
+                          paddingLeft: "1rem",
+                        }}
+                      >
+                        "Real forests consisting of potential natural vegetation
+                        are formed from tall trees, which are the primary trees,
+                        and beneath them, semi-tall trees, short trees, and
+                        bottom weeds, with the entire forest functioning as a
+                        whole system. They are resistant to natural disasters,
+                        and do not collapse easily... In addition to such local
+                        functions, globally, they absorb carbon and can be
+                        expected to curb global warming by solidifying the
+                        carbon and maintaining it within the forest for
+                        countless years. Naturally, live trees die after several
+                        hundred years. But the semi-tall trees and short trees
+                        underneath them have successor trees in waiting. When
+                        one tree dies, these successor trees quickly dominate
+                        the space it left behind. As a result, forest systems
+                        sustain themselves semi permanently."
+                        <br />
+                        <br />
+                        <strong>- Dr. Akira Miyawaki</strong>,{" "}
+                        <a
+                          href="https://af-info.or.jp/en/blueplanet/list-2006.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Speech for accepting the Blue Planet Prize in 2006
+                        </a>
                       </p>
                     </div>
                     <div className="benefits-section">
-                      <h3>Benefits:</h3>
+                      <h3>The Mini-Forest will:</h3>
                       <div
                         style={{
                           display: "flex",
@@ -170,40 +204,48 @@ function Home() {
                           style={{ flex: "1", margin: "0" }}
                         >
                           <li>
-                            <strong>Rapid Growth:</strong> 10x faster than
-                            conventional forests
+                            <strong>Ameliorate</strong> storm water issues at
+                            the high school
                           </li>
                           <li>
-                            <strong>High Density:</strong> 30x denser vegetation
+                            <strong>Filter</strong> air and water pollutants
                           </li>
                           <li>
-                            <strong>Self-Sustaining:</strong> No maintenance
-                            after 2-3 years
+                            <strong>Dampen</strong> noise
                           </li>
                           <li>
-                            <strong>Biodiversity:</strong> Supports native
-                            wildlife
+                            <strong>Cool</strong> during high temperatures
                           </li>
                           <li>
-                            <strong>Carbon Capture:</strong> Excellent CO₂
-                            absorption
-                          </li>
-                          <li>
-                            <strong>Community Impact:</strong> Educational and
-                            environmental benefits
+                            <strong>Provide</strong> much needed habitat for
+                            pollinators and birds
                           </li>
                         </ul>
-                        <img
-                          src="/forestbenefits.png"
-                          alt="Forest benefits illustration"
-                          style={{
-                            width: "600px",
-                            height: "auto",
-                            borderRadius: "8px",
-                            flexShrink: 0,
-                            marginTop: "-3rem",
-                          }}
-                        />
+                        <figure>
+                          <img
+                            src="/forestbenefits.png"
+                            alt="Forest benefits illustration"
+                            style={{
+                              width: "600px",
+                              height: "auto",
+                              borderRadius: "8px",
+                              flexShrink: 0,
+                              marginTop: "-3rem",
+                              cursor: "pointer",
+                            }}
+                            onClick={() =>
+                              openFullscreen(
+                                "/forestbenefits.png",
+                                "Forest benefits illustration"
+                              )
+                            }
+                          />
+                          <figcaption
+                            style={{ fontSize: "0.7rem", textAlign: "center" }}
+                          >
+                            Click to enlarge
+                          </figcaption>
+                        </figure>
                       </div>
                     </div>
                   </div>
@@ -220,17 +262,32 @@ function Home() {
                     }}
                   >
                     <div style={{ flex: "1" }}>
-                      <img
-                        src="/3dview.png"
-                        alt="3D view of forest location"
-                        style={{
-                          width: "100%",
-                          maxWidth: "830px",
-                          height: "auto",
-                          borderRadius: "8px",
-                          marginBottom: "0.6rem",
-                        }}
-                      />
+                      <figure>
+                        <img
+                          src="/3dview.png"
+                          alt="3D view of forest location"
+                          style={{
+                            width: "100%",
+                            maxWidth: "830px",
+                            height: "auto",
+                            borderRadius: "8px",
+                            // marginBottom: "0.6rem",
+                            cursor: "pointer",
+                          }}
+                          onClick={() =>
+                            openFullscreen(
+                              "/3dview.png",
+                              "3D view of forest location"
+                            )
+                          }
+                        />
+                        <figcaption
+                          style={{ fontSize: "0.7rem", textAlign: "center" }}
+                        >
+                          3D view of forest location, click to enlarge
+                        </figcaption>
+                      </figure>
+                      <br />
                       <div style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
                         <p>
                           Mini-forest with surrounding mantle of perennials.
@@ -243,16 +300,30 @@ function Home() {
                         </p>
                       </div>
                     </div>
-                    <img
-                      src="/2dview.png"
-                      alt="2D view of forest location"
-                      style={{
-                        width: "300px",
-                        height: "400px",
-                        borderRadius: "8px",
-                        flexShrink: 0,
-                      }}
-                    />
+                    <figure>
+                      <img
+                        src="/2dview.png"
+                        alt="2D view of forest location"
+                        style={{
+                          width: "300px",
+                          height: "400px",
+                          borderRadius: "8px",
+                          flexShrink: 0,
+                          cursor: "pointer",
+                        }}
+                        onClick={() =>
+                          openFullscreen(
+                            "/2dview.png",
+                            "2D view of forest location"
+                          )
+                        }
+                      />
+                      <figcaption
+                        style={{ fontSize: "0.7rem", textAlign: "center" }}
+                      >
+                        2D view of forest location, click to enlarge
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               )}
@@ -407,6 +478,31 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* Fullscreen Image Modal */}
+      {fullscreenImage && (
+        <div className="modal-overlay" onClick={closeFullscreen}>
+          <div
+            className="fullscreen-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="modal-close" onClick={closeFullscreen}>
+              <X size={24} />
+            </button>
+            <img
+              src={fullscreenImage.src}
+              alt={fullscreenImage.alt}
+              style={{
+                width: "auto",
+                height: "auto",
+                maxWidth: "95vw",
+                maxHeight: "95vh",
+                objectFit: "contain",
+                borderRadius: "8px",
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

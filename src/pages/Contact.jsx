@@ -189,7 +189,6 @@ function Contact() {
                 exact date will be announced once we complete our fundraising
                 goal and soil preparation work.
               </p> */}
-
             <div style={{ width: "auto", height: "auto" }}>
               <Chrono
                 items={items}
@@ -199,6 +198,7 @@ function Contact() {
                 timelinePointDimension={22}
               />
             </div>
+            Click a dot in the timeline to get more information
           </div>
           <div className="grid grid-2" style={{ marginTop: "2rem" }}>
             <div className="card">
@@ -246,36 +246,62 @@ function Contact() {
           <div className="card" style={{ maxWidth: "800px", margin: "0 auto" }}>
             <h2>Ready to Make a Difference?</h2>
             <p>
-              Join our mission to create a thriving native forest ecosystem.
-              Every contribution, big or small, helps us reach our goal.
+              Your support will turn this forest into reality, benefitting both
+              human and non-human communities.
             </p>
             <div className="cta-buttons">
               <button onClick={handleDonateClick} className="btn btn-primary">
                 <ExternalLink size={20} />
-                Donate Today
+                Donate To Support Our Forest
               </button>
               <button
                 onClick={handleVolunteerClick}
                 className="btn btn-secondary"
               >
                 <ExternalLink size={20} />
-                Volunteer With Us
+                Join Us As a Volunteer
               </button>
             </div>
             <br />
             <h3>References and Resources</h3>
             <ul>
               <li>
-                Our main{" "}
+                <a
+                  href="https://homegrownnationalpark.org/symbiotic-schoolyard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Homegrown National Park
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.sugiproject.com/forests/danehy-park-forest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  SUGi
+                </a>
+              </li>
+              <li>
                 <a
                   href="https://bio4climate.org/miyawaki-forest-program/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Miyawaki Forest Program
-                </a>{" "}
-                page
+                  Bio4Climate Miyawaki Forest Program
+                </a>
               </li>
+              <li>
+                <a
+                  href="https://pixnio.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Photo by Hagerty Ryan, USFWS
+                </a>
+              </li>
+              <li>Image from Google Maps - last update 2022</li>
               <li>
                 Bio4Climate's{" "}
                 <a
@@ -295,7 +321,7 @@ function Contact() {
                 >
                   A Little Forest with a Towering Task
                 </a>
-                ' – Short documentary on the Miyawaki planting process and the
+                ' - Short documentary on the Miyawaki planting process and the
                 'grounded hope' behind the work
               </li>
               <li>
@@ -328,9 +354,9 @@ function Contact() {
               className="contact-info"
               style={{ textAlign: "center", marginTop: "30px" }}
             >
-              <h4>Additional Contact Information</h4>
+              <h4>Have questions about volunteering and more?</h4>
               <p>
-                Email:{" "}
+                Contact Us:{" "}
                 <a href="mailto:info@miyawakiforestaction.org">
                   info@miyawakiforestaction.org
                 </a>

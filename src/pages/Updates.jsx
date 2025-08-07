@@ -94,19 +94,7 @@ function Updates() {
           </div>
         </div>
       </section>
-      {/* Fundraising Thermometer */}
-      <div style={{ textAlign: "center" }}>
-        <a
-          href="https://www.societ.com/free-tools/fundraising-thermometer/"
-          title="Fundraising Thermometer"
-        >
-          <img
-            decoding="async"
-            border="0"
-            src="http://www.societ.com/fundraising-thermometer?currency=dollar&current=1000&goal=2000&color=00c19f&size=large"
-          />
-        </a>
-      </div>
+
       {/* Progress Overview */}
       <section>
         <div className="container">
@@ -132,7 +120,7 @@ function Updates() {
                 size={48}
                 style={{ color: "var(--earth-brown)", margin: "0 auto 1rem" }}
               />
-              <h3>Fall 2025</h3>
+              <h3>October 4, 2025</h3>
               <p>Target Planting Date</p>
             </div>
           </div>
@@ -275,75 +263,6 @@ function Updates() {
               >
                 Join the Team
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Newsletter Signup */}
-      <section className="section-alt">
-        <div className="container">
-          <div
-            className="card"
-            style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto" }}
-          >
-            <h2>Stay in the Loop</h2>
-            <p>
-              Get the latest project updates, volunteer opportunities, and
-              environmental education content delivered to your inbox.
-            </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "1rem",
-                marginTop: "1.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="form-input"
-                style={{ flex: "1", minWidth: "250px" }}
-              />
-              <button className="btn btn-primary">Subscribe to Updates</button>
-            </div>
-            <p
-              style={{
-                fontSize: "0.9rem",
-                marginTop: "1rem",
-                color: "var(--text-light)",
-              }}
-            >
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-      </section>
-      {/* Social Media */}
-      <section>
-        <div className="container">
-          <div
-            className="card"
-            style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
-          >
-            <h2>Follow Our Journey</h2>
-            <p>
-              Connect with us on social media for real-time updates,
-              behind-the-scenes content, and community stories.
-            </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "1rem",
-                justifyContent: "center",
-                marginTop: "1.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <button className="btn btn-outline">📘 Facebook</button>
-              <button className="btn btn-outline">🐦 Twitter</button>
-              <button className="btn btn-outline">📷 Instagram</button>
-              <button className="btn btn-outline">💼 LinkedIn</button>
             </div>
           </div>
         </div>
