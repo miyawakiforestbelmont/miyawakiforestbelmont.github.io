@@ -118,6 +118,7 @@ function Home() {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
+                  id={tab.id}
                   className={`tab-button ${
                     activeTab === tab.id ? "active" : ""
                   }`}
@@ -131,7 +132,7 @@ function Home() {
 
             <div className="tab-content">
               {activeTab === "info" && (
-                <div className="tab-panel">
+                <div className="tab-panel" id="info">
                   <h2>What is a Miyawaki Forest?</h2>
                   <div className="grid grid-2">
                     <div>
@@ -210,7 +211,7 @@ function Home() {
               )}
 
               {activeTab === "location" && (
-                <div className="tab-panel">
+                <div className="tab-panel" id="location">
                   <div
                     style={{
                       display: "flex",

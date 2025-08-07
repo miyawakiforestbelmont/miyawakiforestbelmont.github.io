@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 
 function Header() {
@@ -8,6 +8,7 @@ function Header() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -44,21 +45,21 @@ function Header() {
       content:
         "Community planting event volunteers training planting techniques October 2025",
       section: "Events",
-      url: "/#updates",
+      url: "/updates",
     },
     {
       title: "Project Updates",
       content:
         "Website Launch July 2025 Site Selection June 2025 3000 sq ft location Volunteer Training August 2025 Community Planting October 2025",
       section: "Timeline",
-      url: "/#updates",
+      url: "/updates",
     },
     {
       title: "Our Team",
       content:
         "Dr. Sarah Johnson Environmental Science Educator Mike Chen Community Organizer Lisa Rodriguez Native Plant Specialist Tom Wilson Project Coordinator",
       section: "About Us",
-      url: "/#about",
+      url: "/contact/#about",
     },
     {
       title: "Supporters & Statistics",
@@ -112,18 +113,39 @@ function Header() {
   const handleSearchResultClick = (url) => {
     setSearchQuery("");
     setShowSearchResults(false);
+
     if (url.startsWith("/#")) {
       // Handle internal anchor links
-      if (window.location.pathname === "/") {
-        const element = document.querySelector(url.substring(1));
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+      const anchor = url.substring(2); // Remove "/#"
+      if (location.pathname === "/") {
+        // Already on home page, activate tab and scroll to element
+        setTimeout(() => {
+          // Trigger tab change by clicking the tab button
+          const tabButton = document.getElementById(anchor);
+          if (tabButton) {
+            tabButton.click();
+            // Wait a bit more for tab content to render, then scroll
+            setTimeout(() => {
+              tabButton.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 200);
+          }
+        }, 100);
       } else {
-        window.location.href = url;
+        // Navigate to home page first, then activate tab and scroll
+        navigate("/");
+        setTimeout(() => {
+          const tabButton = document.getElementById(anchor);
+          if (tabButton) {
+            tabButton.click();
+            setTimeout(() => {
+              tabButton.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 200);
+          }
+        }, 500);
       }
     } else {
-      window.location.href = url;
+      // Handle regular page navigation
+      navigate(url);
     }
   };
 

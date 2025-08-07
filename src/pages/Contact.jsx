@@ -46,33 +46,31 @@ function Contact() {
 
   const items = [
     {
-      title: "May 2024",
-      cardTitle: "Miyawaki Forest Project",
-      cardSubtitle: "Kickoff Meeting",
-      cardDetailedText:
-        "We launched the Miyawaki Forest Project with a kickoff meeting on January 15, 2023.",
+      title: "November 12, 2024",
+      cardTitle: "School Committee Meeting",
     },
     {
-      title: "June 2024",
-      cardTitle: "Community Workshops",
-      cardSubtitle: "Hands-on Workshops",
+      title: "April 23, 2025",
+      cardTitle: "Potential Natural Vegetation Research for the Planting List ",
+      cardSubtitle: "Research Phase",
       cardDetailedText:
-        "We held a series of workshops to engage the community and educate them about the project.",
+        "Based on the soil conditions at the Belmont High School site, botanist Walter Kittredge recommended using a High-terrace Floodplain Forest as a model. This forest community now serves as the reference and inspiration for our planting list.",
     },
     {
-      title: "Planting Day",
-      cardTitle: "First Planting Day",
-      cardSubtitle: "Community Planting Event",
+      title: "March 26, 2025",
+      cardTitle: "Site Assessment",
+      cardSubtitle: "Assessment",
       cardDetailedText:
-        "The first community planting day took place on March 10, 2023.",
+        "While assessing the soil with Bio4Climate, we encountered a layer of clay at a depth of ~12 inches. A lab test of the soil showed that the top layer is sandy loam. We confirmed the soil texture with a simple ribbon test. We then surveyed the existing vegetation on the site, around the pond, and in a nearby grove as part of our Potential Natural Vegetation (PNV) research",
     },
     {
-      title: "Maintenance",
-      cardTitle: "Ongoing Maintenance",
-      cardSubtitle: "Regular Care",
-      cardDetailedText:
-        "We conduct regular maintenance activities to ensure the health and growth of the Miyawaki forest.",
+      title: "October 4th, 2025",
+      cardTitle: "Community Planting Day",
     },
+    // {
+    //   title: "Future",
+    //   cardTitle: "Perennial Collar Installation",
+    // },
   ];
 
   const customForestTheme = {
@@ -147,7 +145,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <div className="card" style={{ textAlign: "center" }}>
+            <div className="card" style={{ textAlign: "center" }} id="about">
               <h2>Our Team</h2>
               <p>
                 Miyawaki Forest Action Belmont (MFAB) is an intergenerational
@@ -198,6 +196,7 @@ function Contact() {
                 mode="HORIZONTAL"
                 theme={customForestTheme}
                 textDensity="HIGH"
+                timelinePointDimension={22}
               />
             </div>
           </div>
