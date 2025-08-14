@@ -44,6 +44,12 @@ function Home() {
                 src="/mainpic.png"
                 alt="Community members gathered around the forest site"
                 className="hero-image"
+                onClick={() =>
+                  openFullscreen(
+                    "/mainpic.png",
+                    "Community members gathered around the forest site"
+                  )
+                }
               />
               <p className="hero-caption">
                 <span style={{ fontStyle: "italic" }}>
@@ -55,23 +61,23 @@ function Home() {
               </p>
             </div>
             <div className="hero-text">
-              <h1>Miyawaki Forest Action Belmont</h1>
-              <p className="subtitle" style={{ fontSize: "1.4rem" }}>
+              <h1 style={{ textAlign: "left", marginTop: "-3rem" }}>
+                Miyawaki Forest Action Belmont
+              </h1>
+              <p
+                className="subtitle"
+                style={{ fontSize: "1.4rem", textAlign: "left" }}
+              >
                 Join the Movement, Boosting Biodiversity In Belmont!
               </p>
               <div className="cta-buttons">
-                <button
-                  onClick={handleDonateClick}
-                  className="btn btn-primary"
-                  style={{ marginLeft: "5rem" }}
-                >
+                <button onClick={handleDonateClick} className="btn btn-primary">
                   <ExternalLink size={20} />
                   Donate To Support Our Forest
                 </button>
                 <button
                   onClick={handleVolunteerClick}
                   className="btn btn-secondary"
-                  style={{ marginLeft: "7rem" }}
                 >
                   <ExternalLink size={20} />
                   Join Us As a Volunteer
@@ -89,11 +95,15 @@ function Home() {
             style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
           >
             <h2>Community Planting Day</h2>
-            <p>
-              Our planting date is Saturday, October 4th 2025 from 10 AM to 6 PM
-              at the Triangle in front of Belmont High School by Clay Pit Pond,
-              221 Concord Ave.
-              <br></br>
+            <p style={{ fontSize: "1.6rem", color: "#496914ff" }}>
+              <br />
+              Our planting date is <strong>
+                Saturday, October 4th 2025
+              </strong>{" "}
+              from <strong>10 AM to 6 PM</strong> at the Triangle in front of
+              Belmont High School by Clay Pit Pond, 221 Concord Ave.
+            </p>
+            <p style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
               <br></br>Our rain date is October 5th
               <br></br>
               <br></br>
@@ -101,11 +111,9 @@ function Home() {
               mini-forest to life by planting hundreds of native plants. If
               you’d like to be part of this transformative project, please fill
               out this sign-up form to express your interest in volunteering.
-              All ages able to participate in planting are encouraged to join!
-              <br></br>
-              <br></br>
               The forest will need stewards and volunteers to plant seedlings,
-              spread mulch, and organize materials.
+              spread mulch, and organize materials. All ages able to participate
+              in planting are encouraged to join!
               <br></br>
               <br></br>
               After the planting, for the next three growing seasons, volunteers
@@ -161,6 +169,7 @@ function Home() {
                           fontStyle: "italic",
                           borderLeft: "4px solid #ccc",
                           paddingLeft: "1rem",
+                          color: "#555555ff",
                         }}
                       >
                         "Real forests consisting of potential natural vegetation
@@ -180,7 +189,10 @@ function Home() {
                         sustain themselves semi permanently."
                         <br />
                         <br />
-                        <strong>- Dr. Akira Miyawaki</strong>,{" "}
+                        <strong style={{ color: "#555555ff" }}>
+                          Dr. Akira Miyawaki
+                        </strong>
+                        ,{" "}
                         <a
                           href="https://af-info.or.jp/en/blueplanet/list-2006.html"
                           target="_blank"
@@ -190,8 +202,11 @@ function Home() {
                         </a>
                       </p>
                     </div>
+                    <br></br>
                     <div className="benefits-section">
-                      <h3>The Mini-Forest will:</h3>
+                      <h2 style={{ marginLeft: "-1rem" }}>
+                        The Mini-Forest will:
+                      </h2>
                       <div
                         style={{
                           display: "flex",
@@ -293,7 +308,7 @@ function Home() {
                           Mini-forest with surrounding mantle of perennials.
                           North and south native plant gardens outlined in blue.
                         </p>
-                        <p>
+                        <p style={{ fontSize: "1rem" }}>
                           Belmont High School's front lawn
                           <br />
                           221 Concord Ave, Belmont MA 02478
@@ -425,7 +440,7 @@ function Home() {
                           program is unequivocal..."<br></br>
                           <br></br>
                           <strong>
-                            - Isaac Taylor, Principal, Belmont High School
+                            Isaac Taylor, Principal, Belmont High School
                           </strong>
                         </p>
                         <p>
@@ -442,10 +457,12 @@ function Home() {
                           residents will benefit from the forest for years to
                           come."<br></br>
                           <br></br>
-                          <strong>- Belmont Shade Tree Committee</strong>
+                          <strong>Belmont Shade Tree Committee</strong>
                         </p>
                       </div>
                     </div>
+                    <br></br>
+
                     <div>
                       <h3>Community Supporters</h3>
                       <p>
@@ -454,22 +471,32 @@ function Home() {
                         environmental advocates who believe in creating a
                         greener future.
                       </p>
-                      <ul
-                        style={{ listStyleType: "disc", paddingLeft: "400px" }}
+                      <br />
+                      <div
+                        className="grid grid-2"
+                        style={{ marginLeft: "7rem" }}
                       >
-                        <li>Belmont Citizens Forum</li>
-                        <li>Belmont Department of Public Works</li>
-                        <li>Belmont Garden Club</li>
-                        <li>BHS Climate Action Club</li>
-                        <li>Belmont School Committee</li>
-                        <li>Belmont Tree Warden</li>
-                        <li>Friends of Barbara Becker</li>
-                        <li>High School Principal Isaac Taylor</li>
-                        <li>Mass Audubon Habitat Education Center</li>
-                        <li>Mystic Charles Pollinator Pathways Group</li>
-                        <li>Sustainable Belmont</li>
-                        <li>Town Shade Tree Committee</li>
-                      </ul>
+                        <div>
+                          <ul>
+                            <li>Belmont Citizens Forum</li>
+                            <li>Belmont Department of Public Works</li>
+                            <li>Belmont Garden Club</li>
+                            <li>BHS Climate Action Club</li>
+                            <li>Belmont School Committee</li>
+                            <li>Belmont Tree Warden</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <ul>
+                            <li>Friends of Barbara Becker</li>
+                            <li>High School Principal Isaac Taylor</li>
+                            <li>Mass Audubon Habitat Education Center</li>
+                            <li>Mystic Charles Pollinator Pathways Group</li>
+                            <li>Sustainable Belmont</li>
+                            <li>Town Shade Tree Committee</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

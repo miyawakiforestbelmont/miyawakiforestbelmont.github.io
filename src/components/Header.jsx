@@ -7,6 +7,7 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -110,6 +111,17 @@ function Header() {
     }
   };
 
+  const handleSearchIconClick = () => {
+    setIsSearchExpanded(true);
+  };
+
+  const handleSearchBlur = () => {
+    if (searchQuery.trim() === "") {
+      setIsSearchExpanded(false);
+    }
+    setTimeout(() => setShowSearchResults(false), 200);
+  };
+
   const handleSearchResultClick = (url) => {
     setSearchQuery("");
     setShowSearchResults(false);
@@ -165,65 +177,79 @@ function Header() {
               </span>
             </Link>
 
-            {/* Search Bar */}
-            <div className="search-container">
-              <div className="search-input-wrapper">
-                <Search size={20} className="search-icon" />
-                <input
-                  type="text"
-                  placeholder="Search the site..."
-                  className="search-input"
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  onFocus={() =>
-                    searchResults.length > 0 && setShowSearchResults(true)
-                  }
-                  onBlur={() =>
-                    setTimeout(() => setShowSearchResults(false), 200)
-                  }
-                />
+            <div className="nav-right">
+              {/* Search Bar */}
+              <div className="search-container">
+                <div
+                  className={`search-input-wrapper ${
+                    isSearchExpanded ? "search-expanded" : "search-collapsed"
+                  }`}
+                >
+                  <Search
+                    size={20}
+                    className="search-icon"
+                    onClick={handleSearchIconClick}
+                    style={{ cursor: "pointer" }}
+                  />
+                  {isSearchExpanded && (
+                    <input
+                      type="text"
+                      placeholder="Search this site..."
+                      className="search-input"
+                      value={searchQuery}
+                      onChange={(e) => handleSearch(e.target.value)}
+                      onFocus={() =>
+                        searchResults.length > 0 && setShowSearchResults(true)
+                      }
+                      onBlur={handleSearchBlur}
+                      autoFocus
+                    />
+                  )}
+                </div>
+
+                {showSearchResults && searchResults.length > 0 && (
+                  <div className="search-results">
+                    {searchResults.map((result, index) => (
+                      <div
+                        key={index}
+                        className="search-result-item"
+                        onClick={() => handleSearchResultClick(result.url)}
+                      >
+                        <div className="search-result-title">
+                          {result.title}
+                        </div>
+                        <div className="search-result-section">
+                          {result.section}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              {showSearchResults && searchResults.length > 0 && (
-                <div className="search-results">
-                  {searchResults.map((result, index) => (
-                    <div
-                      key={index}
-                      className="search-result-item"
-                      onClick={() => handleSearchResultClick(result.url)}
-                    >
-                      <div className="search-result-title">{result.title}</div>
-                      <div className="search-result-section">
-                        {result.section}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+              <div className={`nav-menu ${isMenuOpen ? "nav-menu-open" : ""}`}>
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`nav-link ${
+                      location.pathname === item.path ? "nav-link-active" : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
 
-            <div className={`nav-menu ${isMenuOpen ? "nav-menu-open" : ""}`}>
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`nav-link ${
-                    location.pathname === item.path ? "nav-link-active" : ""
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <button
+                className="nav-toggle"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
-
-            <button
-              className="nav-toggle"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
         </div>
       </nav>

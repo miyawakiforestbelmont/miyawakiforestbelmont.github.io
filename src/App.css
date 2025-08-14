@@ -15,7 +15,7 @@ main {
   background: linear-gradient(
     135deg,
     var(--dark-teal) 20%,
-    var(--forest-green) 70%
+    var(--text-light) 80%
   );
   color: white;
   padding: 4rem 0;
