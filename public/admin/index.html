@@ -1,121 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>Miyawaki Forest Belmont - Content Manager</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>A static website</title>
+
+    <!-- include the widget -->
+    <script
+      type="text/javascript"
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+    <div data-netlify-identity-menu></div>
 
-    <!-- GitHub Authentication Configuration -->
-    <script>
-      // Configure the CMS with GitHub backend
-      CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "ChromTules/miyawakiforestbelmont.github.io",
-            branch: "main",
-            // You'll need to add your OAuth client ID here after setting up GitHub OAuth
-            auth_endpoint: "api/auth",
-            base_url: "https://miyawakiforestbelmont-github-io.vercel.app", // Optional: custom OAuth endpoint
-          },
-          load_config_file: true,
-          media_folder: "src/assets/images",
-          public_folder: "/assets/images",
-          local_backend: true, // Enable for local development
-          // Custom preview styles (optional)
-          editor: {
-            preview: true,
-          },
-          // Custom logo for the CMS interface
-          logo_url: "/assets/images/logo.png", // Add your logo here if you have one
-        },
-      });
-
-      // Optional: Custom preview templates
-      CMS.registerPreviewTemplate(
-        "homepage",
-        ({ entry, widgetFor, widgetsFor }) => {
-          const data = entry.getIn(["data"]).toJS();
-          return `
-        <div style="padding: 20px; font-family: Arial, sans-serif;">
-          <h1>${data.title || "Preview Title"}</h1>
-          <p>${data.subtitle || "Preview subtitle..."}</p>
-        </div>
-      `;
-        }
-      );
-
-      // Handle authentication errors gracefully
-      CMS.registerEventListener({
-        name: "login",
-        handler: ({ author }) => {
-          console.log("User logged in:", author);
-        },
-      });
-
-      CMS.registerEventListener({
-        name: "logout",
-        handler: () => {
-          console.log("User logged out");
-          window.location.reload();
-        },
-      });
-
-      // Custom validation (optional)
-      CMS.registerEditorComponent({
-        id: "image-gallery",
-        label: "Image Gallery",
-        fields: [
-          {
-            name: "images",
-            label: "Images",
-            widget: "list",
-            field: { name: "image", label: "Image", widget: "image" },
-          },
-        ],
-        pattern: /^<ImageGallery images=\{(.*?)\} \/>$/,
-        fromBlock: function (match) {
-          return {
-            images: JSON.parse(match[1]),
-          };
-        },
-        toBlock: function (obj) {
-          return `<ImageGallery images={${JSON.stringify(obj.images)}} />`;
-        },
-        toPreview: function (obj) {
-          const imagesList = obj.images
-            .map(
-              (img) =>
-                `<img src="${img}" style="width: 100px; height: 100px; margin: 5px;" />`
-            )
-            .join("");
-          return `<div>${imagesList}</div>`;
-        },
-      });
-    </script>
-
-    <!-- Fallback for browsers that don't support the CMS -->
-    <noscript>
-      <div
-        style="
-          text-align: center;
-          padding: 50px;
-          font-family: Arial, sans-serif;
-        "
-      >
-        <h2>JavaScript Required</h2>
-        <p>
-          This content management system requires JavaScript to function
-          properly.
-        </p>
-        <p>Please enable JavaScript in your browser and reload the page.</p>
-      </div>
-    </noscript>
+    <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+    <div data-netlify-identity-button>Login with Netlify Identity</div>
   </body>
 </html>
