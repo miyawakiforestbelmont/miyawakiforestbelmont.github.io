@@ -3,7 +3,7 @@ backend:
   repo: ChromTules/miyawakiforestbelmont.github.io
   branch: master
   auth_endpoint: api/auth
-  base_url: https://miyawakiforestbelmont-github-io.vercel.app
+  base_url: https://miyawakiforestbelmont.netlify.app
 
 media_folder: src/assets/images
 public_folder: /assets/images
