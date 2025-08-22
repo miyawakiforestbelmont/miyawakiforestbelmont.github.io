@@ -1,18 +1,302 @@
 backend:
   name: github
-  repo: ChromTules/miyawakiforestbelmont.github.io   # replace with your GitHub repo
-  branch: master
+  repo: ChromTules/miyawakiforestbelmont.github.io
+  branch: main
 
-media_folder: "images/uploads"   # where images go
-public_folder: "/images/uploads"
+media_folder: src/assets/images
+public_folder: /assets/images
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  # Homepage Content
+  - name: "homepage"
+    label: "Homepage"
     files:
-      - file: "index.html"
-        label: "Homepage"
-        name: "home"
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/content/hero.json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - {
+              label: "Main Title",
+              name: "title",
+              widget: "string",
+              default: "Growing Native Forests, One Tree at a Time",
+            }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - {
+              label: "Hero Image",
+              name: "hero_image",
+              widget: "image",
+              required: false,
+            }
+          - {
+              label: "Call to Action Button Text",
+              name: "cta_text",
+              widget: "string",
+            }
+          - { label: "Call to Action URL", name: "cta_url", widget: "string" }
+
+      - name: "mission"
+        label: "Mission & Benefits"
+        file: "src/content/mission.json"
+        fields:
+          - { label: "Mission Statement", name: "mission", widget: "markdown" }
+          - label: "Benefits"
+            name: "benefits"
+            widget: "list"
+            fields:
+              - { label: "Benefit", name: "text", widget: "string" }
+          - {
+              label: "Mission Image",
+              name: "image",
+              widget: "image",
+              required: false,
+            }
+
+  # About Miyawaki Method
+  - name: "method"
+    label: "Miyawaki Method"
+    files:
+      - name: "method_info"
+        label: "Method Information"
+        file: "src/content/method.json"
+        fields:
+          - { label: "Method Title", name: "title", widget: "string" }
+          - {
+              label: "Method Description",
+              name: "description",
+              widget: "markdown",
+            }
+          - label: "Method Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Feature", name: "text", widget: "string" }
+          - label: "Principles"
+            name: "principles"
+            widget: "list"
+            fields:
+              - { label: "Principle Title", name: "title", widget: "string" }
+              - {
+                  label: "Principle Description",
+                  name: "description",
+                  widget: "text",
+                }
+          - label: "Global Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Statistic", name: "stat", widget: "string" }
+
+  # Project Information
+  - name: "project"
+    label: "Our Project"
+    files:
+      - name: "project_details"
+        label: "Project Details"
+        file: "src/content/project.json"
+        fields:
+          - { label: "Project Title", name: "title", widget: "string" }
+          - {
+              label: "Project Description",
+              name: "description",
+              widget: "markdown",
+            }
+          - { label: "Site Size", name: "site_size", widget: "string" }
+          - label: "Project Goals"
+            name: "goals"
+            widget: "list"
+            fields:
+              - { label: "Goal", name: "text", widget: "string" }
+          - label: "Timeline"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Phase", name: "phase", widget: "string" }
+              - {
+                  label: "Status",
+                  name: "status",
+                  widget: "select",
+                  options: ["✅ Completed", "🔄 In Progress", "📅 Planned"],
+                }
+              - { label: "Description", name: "description", widget: "string" }
+
+  # Ways to Help
+  - name: "involvement"
+    label: "Get Involved"
+    files:
+      - name: "ways_to_help"
+        label: "Ways to Help"
+        file: "src/content/involvement.json"
+        fields:
+          - label: "Donation Options"
+            name: "donations"
+            widget: "list"
+            fields:
+              - { label: "Option Icon", name: "icon", widget: "string" }
+              - { label: "Option Title", name: "title", widget: "string" }
+              - {
+                  label: "Option Description",
+                  name: "description",
+                  widget: "text",
+                }
+          - label: "Website Features"
+            name: "website_features"
+            widget: "list"
+            fields:
+              - { label: "Feature", name: "text", widget: "string" }
+          - label: "Volunteer Benefits"
+            name: "volunteer_benefits"
+            widget: "list"
+            fields:
+              - { label: "Benefit", name: "text", widget: "string" }
+
+  # Educational Content
+  - name: "education"
+    label: "Education"
+    files:
+      - name: "educational_content"
+        label: "Educational Programs"
+        file: "src/content/education.json"
+        fields:
+          - label: "Student Opportunities"
+            name: "student_opportunities"
+            widget: "list"
+            fields:
+              - { label: "Opportunity", name: "text", widget: "string" }
+          - label: "Business Partnerships"
+            name: "business_partnerships"
+            widget: "list"
+            fields:
+              - { label: "Partnership Benefit", name: "text", widget: "string" }
+
+  # Impact & Goals
+  - name: "impact"
+    label: "Environmental Impact"
+    files:
+      - name: "impact_goals"
+        label: "Impact Goals"
+        file: "src/content/impact.json"
+        fields:
+          - label: "Environmental Impact"
+            name: "environmental"
+            widget: "list"
+            fields:
+              - { label: "Impact Type", name: "type", widget: "string" }
+              - {
+                  label: "Impact Description",
+                  name: "description",
+                  widget: "string",
+                }
+          - label: "Community Impact"
+            name: "community"
+            widget: "list"
+            fields:
+              - { label: "Impact Type", name: "type", widget: "string" }
+              - {
+                  label: "Impact Description",
+                  name: "description",
+                  widget: "string",
+                }
+
+  # Contact Information
+  - name: "contact"
+    label: "Contact & Links"
+    files:
+      - name: "contact_info"
+        label: "Contact Information"
+        file: "src/content/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Website URL", name: "website", widget: "string" }
+          - {
+              label: "Volunteer Form URL",
+              name: "volunteer_form",
+              widget: "string",
+            }
+          - { label: "Donation URL", name: "donation_url", widget: "string" }
+          - label: "Social Media"
+            name: "social_media"
+            widget: "object"
+            fields:
+              - {
+                  label: "Facebook URL",
+                  name: "facebook",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Instagram URL",
+                  name: "instagram",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Newsletter URL",
+                  name: "newsletter",
+                  widget: "string",
+                  required: false,
+                }
+
+  # Gallery
+  - name: "gallery"
+    label: "Photo Gallery"
+    files:
+      - name: "gallery_images"
+        label: "Gallery Images"
+        file: "src/content/gallery.json"
+        fields:
+          - label: "Gallery Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+
+  # Updates/News
+  - name: "updates"
+    label: "Project Updates"
+    folder: "src/content/updates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - {
+              label: "Site Description",
+              name: "site_description",
+              widget: "text",
+            }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - {
+              label: "Favicon",
+              name: "favicon",
+              widget: "image",
+              required: false,
+            }
+          - label: "Navigation Menu"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Menu Item", name: "text", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
+          - { label: "Footer Text", name: "footer_text", widget: "string" }
