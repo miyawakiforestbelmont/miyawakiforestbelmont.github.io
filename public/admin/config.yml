@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: ChromTules/miyawakiforestbelmont.github.io
-  branch: master
-  auth_endpoint: api/auth
-  base_url: https://miyawakiforestbelmont.netlify.app
+  name: git-gateway
+  branch: main
 
 media_folder: src/assets/images
 public_folder: /assets/images
