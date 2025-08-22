@@ -19,11 +19,22 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script type="module" crossorigin src="/assets/index-DDqafarh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BTi4n4h3.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BTi4n4h3.css" />
   </head>
   <body>
-    <div id="root">
-    </div>
+    <div id="root"></div>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
