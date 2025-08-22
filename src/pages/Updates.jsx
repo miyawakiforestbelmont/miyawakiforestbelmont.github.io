@@ -6,9 +6,15 @@ import {
   TreePine,
   Target,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 function Updates() {
-  const updates = [
+  const [timelineUpdates, setTimelineUpdates] = useState([]);
+  const [newsUpdates, setNewsUpdates] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Your existing hardcoded timeline data as fallback
+  const fallbackUpdates = [
     {
       id: 1,
       date: "July 2025",
@@ -74,12 +80,89 @@ function Updates() {
     },
   ];
 
-  const completedUpdates = updates.filter(
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        // Load timeline updates from CMS (if they exist)
+        try {
+          const timelineData = await import("../content/timeline.json");
+          if (timelineData.default && timelineData.default.updates) {
+            const updatesWithIcons = timelineData.default.updates.map(
+              (update) => ({
+                ...update,
+                icon:
+                  update.status === "completed" ? (
+                    <CheckCircle size={24} />
+                  ) : update.status === "upcoming" ? (
+                    <Clock size={24} />
+                  ) : (
+                    <TreePine size={24} />
+                  ),
+              })
+            );
+            setTimelineUpdates(updatesWithIcons);
+          } else {
+            setTimelineUpdates(fallbackUpdates);
+          }
+        } catch (error) {
+          console.log("No timeline.json found, using fallback data");
+          setTimelineUpdates(fallbackUpdates);
+        }
+
+        // Load news updates from CMS
+        try {
+          const newsModules = import.meta.glob("../content/updates/*.json");
+          const newsPromises = Object.entries(newsModules).map(
+            async ([path, importFn]) => {
+              const updateData = await importFn();
+              const filename = path.split("/").pop().replace(".json", "");
+
+              return {
+                ...updateData.default,
+                slug: filename,
+              };
+            }
+          );
+
+          const loadedNews = await Promise.all(newsPromises);
+          // Sort by date, newest first
+          loadedNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+          setNewsUpdates(loadedNews);
+        } catch (error) {
+          console.log("No news updates found");
+          setNewsUpdates([]);
+        }
+      } catch (error) {
+        console.error("Error loading content:", error);
+        setTimelineUpdates(fallbackUpdates);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadContent();
+  }, []);
+
+  const completedUpdates = timelineUpdates.filter(
     (update) => update.status === "completed"
   );
-  const upcomingUpdates = updates.filter(
+  const upcomingUpdates = timelineUpdates.filter(
     (update) => update.status === "upcoming"
   );
+
+  if (loading) {
+    return (
+      <div className="updates">
+        <section className="hero">
+          <div className="container">
+            <div className="hero-content">
+              <h1>Loading Updates...</h1>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="updates">
@@ -104,7 +187,7 @@ function Updates() {
                 size={48}
                 style={{ color: "var(--forest-green)", margin: "0 auto 1rem" }}
               />
-              <h3>4</h3>
+              <h3>{completedUpdates.length}</h3>
               <p>Milestones Completed</p>
             </div>
             <div className="card" style={{ textAlign: "center" }}>
@@ -112,7 +195,7 @@ function Updates() {
                 size={48}
                 style={{ color: "var(--soft-blue)", margin: "0 auto 1rem" }}
               />
-              <h3>3</h3>
+              <h3>{upcomingUpdates.length}</h3>
               <p>Upcoming Events</p>
             </div>
             <div className="card" style={{ textAlign: "center" }}>
@@ -126,12 +209,13 @@ function Updates() {
           </div>
         </div>
       </section>
+
       {/* Timeline */}
       <section className="section-alt">
         <div className="container">
           <h2>Project Timeline</h2>
           <div className="timeline">
-            {updates.map((update, index) => (
+            {timelineUpdates.map((update, index) => (
               <div key={update.id} className="timeline-item">
                 <div className="timeline-content">
                   <div
@@ -204,27 +288,75 @@ function Updates() {
           </div>
         </div>
       </section>
-      {/* Recent Updates */}
+
+      {/* CMS News Updates */}
+      {newsUpdates.length > 0 && (
+        <section>
+          <div className="container">
+            <h2>Latest News</h2>
+            <div className="grid grid-2">
+              {newsUpdates.slice(0, 4).map((update) => (
+                <div key={update.slug} className="card">
+                  {update.featured_image && (
+                    <img
+                      src={update.featured_image}
+                      alt={update.title}
+                      style={{
+                        width: "100%",
+                        height: "200px",
+                        objectFit: "cover",
+                        borderRadius: "8px",
+                        marginBottom: "1rem",
+                      }}
+                    />
+                  )}
+                  <h3>{update.title}</h3>
+                  <p
+                    style={{
+                      color: "var(--text-light)",
+                      fontSize: "0.9rem",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    {new Date(update.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <p>{update.summary}</p>
+                  {update.tags && update.tags.length > 0 && (
+                    <div style={{ marginTop: "1rem" }}>
+                      {update.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          style={{
+                            display: "inline-block",
+                            padding: "0.25rem 0.5rem",
+                            margin: "0.25rem 0.25rem 0 0",
+                            backgroundColor: "rgba(45, 90, 61, 0.1)",
+                            color: "var(--forest-green)",
+                            borderRadius: "12px",
+                            fontSize: "0.8rem",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Original Static Content */}
       <section>
         <div className="container">
-          <h2>Latest News</h2>
+          <h2>Community Engagement</h2>
           <div className="grid grid-2">
-            <div className="card">
-              {/* <h3>Fundraising Update</h3>
-              <div className="progress-bar" style={{ marginBottom: '1rem' }}>
-                <div className="progress-fill" style={{ width: '35%' }}></div>
-              </div>
-              <p><strong>$5,250 raised</strong> of $15,000 goal (35%)</p>
-              <p>
-                Thanks to our amazing community supporters, we've raised over one-third of our 
-                funding goal! Recent donations include support from local businesses, families, 
-                and environmental advocates.
-              </p>
-              <a href="/help" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-                Contribute Now
-              </a> */}
-            </div>
-
             <div className="card">
               <h3>Volunteer Interest</h3>
               <div
