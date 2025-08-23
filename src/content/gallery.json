@@ -11,6 +11,14 @@
       "name": "lorem",
       "location": "ipsum",
       "treeType": "tree"
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/logo.png.png",
+      "message": "test",
+      "name": "h",
+      "location": "bon",
+      "treeType": "tree"
     }
   ]
 }
