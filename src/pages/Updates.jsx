@@ -86,20 +86,18 @@ function Updates() {
         // Load timeline updates from CMS (if they exist)
         try {
           const timelineData = await import("../content/timeline.json");
-          if (timelineData.default && timelineData.default.updates) {
-            const updatesWithIcons = timelineData.default.updates.map(
-              (update) => ({
-                ...update,
-                icon:
-                  update.status === "completed" ? (
-                    <CheckCircle size={24} />
-                  ) : update.status === "upcoming" ? (
-                    <Clock size={24} />
-                  ) : (
-                    <TreePine size={24} />
-                  ),
-              })
-            );
+          if (timelineData.updates || timelineData.default.updates) {
+            const updatesWithIcons = timelineData.updates.map((update) => ({
+              ...update,
+              icon:
+                update.status === "completed" ? (
+                  <CheckCircle size={24} />
+                ) : update.status === "upcoming" ? (
+                  <Clock size={24} />
+                ) : (
+                  <TreePine size={24} />
+                ),
+            }));
             setTimelineUpdates(updatesWithIcons);
           } else {
             setTimelineUpdates(fallbackUpdates);
