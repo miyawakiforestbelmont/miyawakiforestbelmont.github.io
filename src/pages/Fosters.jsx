@@ -288,7 +288,9 @@ function Fosters() {
                 <div className="gallery-image">
                   <img
                     src={
-                      person.image.startsWith("/") ? person.image : person.image
+                      person.image.startsWith("/")
+                        ? "src" + person.image
+                        : person.image
                     }
                     alt={`${person.name} - Foster Tree Parent`}
                   />
