@@ -13,6 +13,13 @@
       "title": "Site finished",
       "description": "Yes!",
       "status": "upcoming"
+    },
+    {
+      "id": 3,
+      "date": "August 22, 2025",
+      "title": "Forest Soil Amendments",
+      "description": "DPW and Bio4 and MFAB dug, mixed, and mulched soil.",
+      "status": "completed"
     }
   ]
 }
