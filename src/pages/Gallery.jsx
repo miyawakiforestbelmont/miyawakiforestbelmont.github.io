@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Heart,
   User,
@@ -11,6 +11,7 @@ import { Chrono } from "react-chrono";
 
 function Gallery() {
   // Sample data for foster tree people - replace with actual data
+  const [fosterUpdates, setFosterUpdates] = useState([]);
   const [fosterTreePeople] = useState([
     {
       id: 1,
@@ -69,6 +70,23 @@ function Gallery() {
       treeType: "Pine Sapling",
     },
   ]);
+  useEffect(() => {
+    const loadContent = async () => {
+      // Load timeline updates from CMS (if they exist)
+      try {
+        const timelineData = await import("../content/gallery.json");
+        if (timelineData.images) {
+          setFosterUpdates(fosterUpdates);
+        } else {
+          setFosterUpdates(fallbackUpdates);
+        }
+      } catch (error) {
+        console.log("No timeline.json found, using fallback data");
+        setFosterUpdates(fallbackUpdates);
+      }
+    };
+    loadContent();
+  }, []);
 
   const handleSubmitClick = () => {
     window.open("https://forms.gle/faXNcHmNKQviMfPt9", "_blank");
@@ -285,7 +303,6 @@ function Gallery() {
           <div className="gallery-grid">
             {currentPhotos.map((person) => (
               <div
-                key={person.id}
                 className="gallery-card"
                 onClick={() => setSelectedPerson(person)}
               >
