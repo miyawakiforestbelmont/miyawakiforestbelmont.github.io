@@ -1,9 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ExternalLink, Users, TreePine, Target, X } from "lucide-react";
 
 function Home() {
   const [activeTab, setActiveTab] = useState("info");
   const [fullscreenImage, setFullscreenImage] = useState(null);
+  const [supporters, setSupporters] = useState([]);
+
+  useEffect(() => {
+    const loadSupporters = async () => {
+      try {
+        const supportersData = await import("../content/supporters.json");
+        if (supportersData.supporters) {
+          setSupporters(supportersData.supporters);
+        }
+      } catch (error) {
+        console.log("No supporters.json found, using empty array");
+        setSupporters([]);
+      }
+    };
+    loadSupporters();
+  }, []);
 
   const tabs = [
     { id: "info", label: "Miyawaki Forest Info", icon: <TreePine size={20} /> },
@@ -100,8 +116,9 @@ function Home() {
               Our planting date is <strong>
                 Saturday, October 4th 2025
               </strong>{" "}
-              from <strong>10 AM to 6 PM</strong> at the Triangle in front of
-              Belmont High School by Clay Pit Pond, 221 Concord Ave.
+              from <br />
+              <strong>10 AM to 6 PM</strong> at the Triangle in front of Belmont
+              High School by Clay Pit Pond, 221 Concord Ave.
             </p>
             <p style={{ fontSize: "1.2rem", lineHeight: "1.5" }}>
               <br></br>Our rain date is October 5th
@@ -475,26 +492,38 @@ function Home() {
                         className="grid grid-2"
                         style={{ marginLeft: "7rem" }}
                       >
-                        <div>
-                          <ul>
-                            <li>Belmont Citizens Forum</li>
-                            <li>Belmont Department of Public Works</li>
-                            <li>Belmont Garden Club</li>
-                            <li>BHS Climate Action Club</li>
-                            <li>Belmont School Committee</li>
-                            <li>Belmont Tree Warden</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <ul>
-                            <li>Friends of Barbara Becker</li>
-                            <li>High School Principal Isaac Taylor</li>
-                            <li>Mass Audubon Habitat Education Center</li>
-                            <li>Mystic Charles Pollinator Pathways Group</li>
-                            <li>Sustainable Belmont</li>
-                            <li>Town Shade Tree Committee</li>
-                          </ul>
-                        </div>
+                        {supporters.length > 0 ? (
+                          <>
+                            <div>
+                              <ul>
+                                {supporters
+                                  .slice(0, Math.ceil(supporters.length / 2))
+                                  .map((supporter, index) => (
+                                    <li key={index}>{supporter.name}</li>
+                                  ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <ul>
+                                {supporters
+                                  .slice(Math.ceil(supporters.length / 2))
+                                  .map((supporter, index) => (
+                                    <li
+                                      key={
+                                        index + Math.ceil(supporters.length / 2)
+                                      }
+                                    >
+                                      {supporter.name}
+                                    </li>
+                                  ))}
+                              </ul>
+                            </div>
+                          </>
+                        ) : (
+                          <div>
+                            <p>Loading supporters...</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

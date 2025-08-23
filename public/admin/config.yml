@@ -41,14 +41,14 @@ collections:
                   - { label: "Upcoming", value: "upcoming" }
                   - { label: "In Progress", value: "in-progress" }
 
-  - name: "gallery"
-    label: "Gallery"
+  - name: "Foster"
+    label: "Foster"
     files:
       - name: "gallery_images"
-        label: "Gallery Images"
-        file: "src/content/gallery.json"
+        label: "Foster Images"
+        file: "src/content/fostered.json"
         fields:
-          - label: "Gallery Images"
+          - label: "Foster Images"
             name: "images"
             widget: "list"
             fields:
@@ -69,6 +69,44 @@ collections:
                 widget: "string"
               - label: "treeType"
                 name: "treeType"
+                widget: "string"
+
+  - name: "Gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery_general"
+        label: "Gallery Images"
+        file: "src/content/gallery.json"
+        fields:
+          - label: "Foster Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - label: "ID"
+                name: "id"
+                widget: "number"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Caption"
+                name: "message"
+                widget: "string"
+              - label: "location"
+                name: "location"
+                widget: "string"
+  - name: "Supporters"
+    label: "Supporters"
+    files:
+      - name: "supporters"
+        label: "Supporters"
+        file: "src/content/supporters.json"
+        fields:
+          - label: "Supporters"
+            name: "supporters"
+            widget: "list"
+            fields:
+              - label: "Name"
+                name: "name"
                 widget: "string"
 
   # # Project Statistics
