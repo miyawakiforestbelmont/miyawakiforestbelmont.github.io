@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Heart, User, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Heart,
+  User,
+  MapPin,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+} from "lucide-react";
 import { Chrono } from "react-chrono";
 
 function Gallery() {
@@ -63,6 +70,9 @@ function Gallery() {
     },
   ]);
 
+  const handleSubmitClick = () => {
+    window.open("https://forms.gle/faXNcHmNKQviMfPt9", "_blank");
+  };
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const photosPerPage = 6;
@@ -321,6 +331,17 @@ function Gallery() {
           )}
         </div>
       </section>
+
+      {/* Submit your own */}
+      <div
+        className="cta-buttons"
+        style={{ textAlign: "center", margin: "0 40%" }}
+      >
+        <button onClick={handleSubmitClick} className="btn btn-primary">
+          <ExternalLink size={20} />
+          Submit Your Own Pictures
+        </button>
+      </div>
 
       {/* Timeline */}
       <section className="section-alt">

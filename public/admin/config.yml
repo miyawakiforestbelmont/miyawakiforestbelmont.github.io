@@ -41,6 +41,26 @@ collections:
                   - { label: "Upcoming", value: "upcoming" }
                   - { label: "In Progress", value: "in-progress" }
 
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery_images"
+        label: "Gallery Images"
+        file: "src/content/gallery.json"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+          - label: "Caption"
+            name: "caption"
+            widget: "string"
+          - label: "name"
+            name: "name"
+            widget: "string"
+          - label: "location"
+            name: "location"
+            widget: "string"
+
   # # Project Statistics
   # - name: "stats"
   #   label: "Project Statistics"
