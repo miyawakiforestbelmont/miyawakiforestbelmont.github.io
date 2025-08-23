@@ -2,5 +2,15 @@
   "image": "/assets/images/heather_tree.jpg",
   "caption": "Tree",
   "name": "Lorem ipsum",
-  "location": "Tre"
+  "location": "Tre",
+  "images": [
+    {
+      "id": 1,
+      "image": "/assets/images/heather_tree.jpg",
+      "message": "yay",
+      "name": "lorem",
+      "location": "ipsum",
+      "treeType": "tree"
+    }
+  ]
 }
