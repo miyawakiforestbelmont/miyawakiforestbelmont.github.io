@@ -2,14 +2,17 @@
   "updates": [
     {
       "id": 1,
-
       "title": "test",
-
       "description": "test",
-
       "status": "completed",
-
       "date": "July 2025"
+    },
+    {
+      "id": 2,
+      "date": "August 2025",
+      "title": "Site finished",
+      "description": "Yes!",
+      "status": "upcoming"
     }
   ]
 }
