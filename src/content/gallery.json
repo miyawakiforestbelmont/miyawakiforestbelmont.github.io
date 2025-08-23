@@ -11,33 +11,27 @@
       "image": "/assets/images/logo.png.png",
       "message": "test",
       "location": "bon"
-      "name": "h",
-      "location": "bon",
-      "treeType": "tree"
     },
     {
       "id": 25050401,
       "image": "/assets/images/20250423_boltonflats.jpg",
       "message": "Bolton Flats field trip",
-      "name": "anon",
-      "location": "Bolton Flats",
-      "treeType": "misc"
+
+      "location": "Bolton Flats"
     },
     {
       "id": 25040101,
       "image": "/assets/images/img_0237.jpg",
       "message": "testing 1234",
-      "name": "Tree seedlings caged",
-      "location": "Belmont ",
-      "treeType": "multiple species"
+
+      "location": "Belmont "
     },
     {
       "id": 25062701,
       "image": "/assets/images/v7-d95k4.jpg",
       "message": "more seedlings",
-      "name": "test",
-      "location": "test",
-      "treeType": "test"
+
+      "location": "test"
     }
   ]
 }
