@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, User, MapPin } from "lucide-react";
+import { Heart, User, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { Chrono } from "react-chrono";
 
 function Gallery() {
@@ -9,7 +9,7 @@ function Gallery() {
       id: 1,
       name: "Sarah Johnson",
       location: "Downtown",
-      image: "/api/placeholder/200/200",
+      image: "src/assets/heather_tree.jpg",
       message: "Excited to help grow our community forest!",
       treeType: "Oak Sapling",
     },
@@ -17,7 +17,7 @@ function Gallery() {
       id: 2,
       name: "Mike Chen",
       location: "Riverside",
-      image: "/api/placeholder/200/200",
+      image: "src/assets/mike_chen.jpg",
       message: "For my children's future and cleaner air.",
       treeType: "Maple Sapling",
     },
@@ -53,9 +53,37 @@ function Gallery() {
       message: "Building a legacy for future generations.",
       treeType: "Elm Sapling",
     },
+    {
+      id: 7,
+      name: "Tom Wilson",
+      location: "Central",
+      image: "/api/placeholder/200/200",
+      message: "Every tree makes a difference!",
+      treeType: "Pine Sapling",
+    },
   ]);
 
   const [selectedPerson, setSelectedPerson] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const photosPerPage = 6;
+
+  // Calculate pagination
+  const totalPages = Math.ceil(fosterTreePeople.length / photosPerPage);
+  const startIndex = (currentPage - 1) * photosPerPage;
+  const endIndex = startIndex + photosPerPage;
+  const currentPhotos = fosterTreePeople.slice(startIndex, endIndex);
+
+  const goToNextPage = () => {
+    setCurrentPage((prev) => (prev < totalPages ? prev + 1 : 1));
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : totalPages));
+  };
+
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const items = [
     {
@@ -129,8 +157,8 @@ function Gallery() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Foster a Tree Gallery</h1>
-            <p className="subtitle">
+            <h1>Gallery</h1>
+            <p className="subtitle" style={{ paddingTop: "40px" }}>
               Meet the amazing people who are fostering saplings for our
               Miyawaki forest
             </p>
@@ -138,44 +166,114 @@ function Gallery() {
         </div>
       </section>
 
-      {/* Gallery Stats */}
-      <section className="section-alt">
-        <div className="container">
-          <div className="grid grid-3">
-            <div className="card" style={{ textAlign: "center" }}>
-              <Heart
-                size={48}
-                style={{ color: "var(--forest-green)", margin: "0 auto 1rem" }}
-              />
-              <h3>{fosterTreePeople.length}</h3>
-              <p>Trees Fostered</p>
-            </div>
-            <div className="card" style={{ textAlign: "center" }}>
-              <User
-                size={48}
-                style={{ color: "var(--sage-green)", margin: "0 auto 1rem" }}
-              />
-              <h3>{fosterTreePeople.length}</h3>
-              <p>Foster Parents</p>
-            </div>
-            <div className="card" style={{ textAlign: "center" }}>
-              <MapPin
-                size={48}
-                style={{ color: "var(--earth-brown)", margin: "0 auto 1rem" }}
-              />
-              <h3>6</h3>
-              <p>Neighborhoods Represented</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Grid */}
       <section>
         <div className="container">
-          <h2>Our Foster Tree Community</h2>
+          <h2>Event photos</h2>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div
+              className="pagination-controls"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "1rem",
+                marginBottom: "2rem",
+              }}
+            >
+              <button
+                onClick={goToPrevPage}
+                className="pagination-btn"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "var(--forest-green)",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "25px",
+                  cursor: "pointer",
+                  fontSize: "0.9rem",
+                  transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = "var(--sage-green)")
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = "var(--forest-green)")
+                }
+              >
+                <ChevronLeft size={16} />
+                Previous
+              </button>
+
+              <div
+                className="page-indicators"
+                style={{
+                  display: "flex",
+                  gap: "0.5rem",
+                }}
+              >
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <button
+                    key={index + 1}
+                    onClick={() => goToPage(index + 1)}
+                    style={{
+                      width: "35px",
+                      height: "35px",
+                      borderRadius: "50%",
+                      border: "none",
+                      backgroundColor:
+                        currentPage === index + 1
+                          ? "var(--forest-green)"
+                          : "var(--sage-green)",
+                      color: "white",
+                      cursor: "pointer",
+                      fontSize: "0.9rem",
+                      transition: "all 0.3s ease",
+                      transform:
+                        currentPage === index + 1 ? "scale(1.1)" : "scale(1)",
+                    }}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={goToNextPage}
+                className="pagination-btn"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "var(--forest-green)",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "25px",
+                  cursor: "pointer",
+                  fontSize: "0.9rem",
+                  transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.target.style.backgroundColor = "var(--sage-green)")
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.backgroundColor = "var(--forest-green)")
+                }
+              >
+                Next
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          )}
+
           <div className="gallery-grid">
-            {fosterTreePeople.map((person) => (
+            {currentPhotos.map((person) => (
               <div
                 key={person.id}
                 className="gallery-card"
@@ -205,6 +303,22 @@ function Gallery() {
               </div>
             ))}
           </div>
+
+          {/* Page Info */}
+          {totalPages > 1 && (
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "1.5rem",
+                color: "var(--text-light)",
+                fontSize: "0.9rem",
+              }}
+            >
+              Showing {startIndex + 1}-
+              {Math.min(endIndex, fosterTreePeople.length)} of{" "}
+              {fosterTreePeople.length} foster tree parents
+            </div>
+          )}
         </div>
       </section>
 

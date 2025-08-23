@@ -6,82 +6,6 @@ media_folder: src/assets/images
 public_folder: /assets/images
 
 collections:
-  - name: "homepage"
-    label: "Homepage Content"
-    files:
-      - name: "hero"
-        label: "Hero Section"
-        file: "src/content/hero.json"
-        fields:
-          - label: "Main Title"
-            name: "title"
-            widget: "string"
-            default: "Growing Native Forests, One Tree at a Time"
-          - label: "Subtitle"
-            name: "subtitle"
-            widget: "text"
-          - label: "Hero Image"
-            name: "hero_image"
-            widget: "image"
-            required: false
-          - label: "Call to Action Button Text"
-            name: "cta_text"
-            widget: "string"
-          - label: "Call to Action URL"
-            name: "cta_url"
-            widget: "string"
-
-  - name: "content"
-    label: "Site Content"
-    files:
-      - name: "mission"
-        label: "Mission & Benefits"
-        file: "src/content/mission.json"
-        fields:
-          - label: "Mission Statement"
-            name: "mission"
-            widget: "markdown"
-          - label: "Benefits"
-            name: "benefits"
-            widget: "list"
-            field:
-              label: "Benefit"
-              name: "text"
-              widget: "string"
-
-      - name: "contact"
-        label: "Contact Information"
-        file: "src/content/contact.json"
-        fields:
-          - label: "Email"
-            name: "email"
-            widget: "string"
-          - label: "Website URL"
-            name: "website"
-            widget: "string"
-          - label: "Volunteer Form URL"
-            name: "volunteer_form"
-            widget: "string"
-          - label: "Donation URL"
-            name: "donation_url"
-            widget: "string"
-
-  - name: "updates"
-    label: "Project Updates"
-    folder: "src/content/updates"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Date"
-        name: "date"
-        widget: "datetime"
-      - label: "Content"
-        name: "body"
-        widget: "markdown"
-
   # Add these collections to your existing config.yml
 
   # Timeline Management
@@ -89,10 +13,10 @@ collections:
     label: "Project Timeline"
     files:
       - name: "timeline_updates"
-        label: "Timeline Updates"
+        label: "Project Updates"
         file: "src/content/timeline.json"
         fields:
-          - label: "Timeline Updates"
+          - label: "Project Updates"
             name: "updates"
             widget: "list"
             fields:
@@ -117,31 +41,31 @@ collections:
                   - { label: "Upcoming", value: "upcoming" }
                   - { label: "In Progress", value: "in-progress" }
 
-  # Project Statistics
-  - name: "stats"
-    label: "Project Statistics"
-    files:
-      - name: "project_stats"
-        label: "Project Statistics"
-        file: "src/content/stats.json"
-        fields:
-          - label: "Volunteers Registered"
-            name: "volunteers_count"
-            widget: "number"
-            default: 47
-          - label: "Fundraising Goal"
-            name: "fundraising_goal"
-            widget: "number"
-            default: 15000
-          - label: "Amount Raised"
-            name: "amount_raised"
-            widget: "number"
-            default: 5250
-          - label: "Target Planting Date"
-            name: "target_date"
-            widget: "string"
-            default: "October 4, 2025"
-          - label: "Site Size"
-            name: "site_size"
-            widget: "string"
-            default: "3,000 sq ft"
+  # # Project Statistics
+  # - name: "stats"
+  #   label: "Project Statistics"
+  #   files:
+  #     - name: "project_stats"
+  #       label: "Project Statistics"
+  #       file: "src/content/stats.json"
+  #       fields:
+  #         - label: "Volunteers Registered"
+  #           name: "volunteers_count"
+  #           widget: "number"
+  #           default: 47
+  #         - label: "Fundraising Goal"
+  #           name: "fundraising_goal"
+  #           widget: "number"
+  #           default: 15000
+  #         - label: "Amount Raised"
+  #           name: "amount_raised"
+  #           widget: "number"
+  #           default: 5250
+  #         - label: "Target Planting Date"
+  #           name: "target_date"
+  #           widget: "string"
+  #           default: "October 4, 2025"
+  #         - label: "Site Size"
+  #           name: "site_size"
+  #           widget: "string"
+  #           default: "3,000 sq ft"

@@ -169,41 +169,9 @@ function Updates() {
         <div className="container">
           <div className="hero-content">
             <h1>Project Updates</h1>
-            <p className="subtitle">
+            <p className="subtitle" style={{ paddingTop: "40px" }}>
               Track our progress as we build our community forest
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Progress Overview */}
-      <section>
-        <div className="container">
-          <div className="grid grid-3">
-            <div className="card" style={{ textAlign: "center" }}>
-              <CheckCircle
-                size={48}
-                style={{ color: "var(--forest-green)", margin: "0 auto 1rem" }}
-              />
-              <h3>{completedUpdates.length}</h3>
-              <p>Milestones Completed</p>
-            </div>
-            <div className="card" style={{ textAlign: "center" }}>
-              <Clock
-                size={48}
-                style={{ color: "var(--soft-blue)", margin: "0 auto 1rem" }}
-              />
-              <h3>{upcomingUpdates.length}</h3>
-              <p>Upcoming Events</p>
-            </div>
-            <div className="card" style={{ textAlign: "center" }}>
-              <Target
-                size={48}
-                style={{ color: "var(--earth-brown)", margin: "0 auto 1rem" }}
-              />
-              <h3>October 4, 2025</h3>
-              <p>Target Planting Date</p>
-            </div>
           </div>
         </div>
       </section>
@@ -211,7 +179,6 @@ function Updates() {
       {/* Timeline */}
       <section className="section-alt">
         <div className="container">
-          <h2>Project Timeline</h2>
           <div className="timeline">
             {timelineUpdates.map((update, index) => (
               <div key={update.id} className="timeline-item">
@@ -349,54 +316,6 @@ function Updates() {
           </div>
         </section>
       )}
-
-      {/* Original Static Content */}
-      <section>
-        <div className="container">
-          <h2>Community Engagement</h2>
-          <div className="grid grid-2">
-            <div className="card">
-              <h3>Volunteer Interest</h3>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1rem",
-                  marginBottom: "1rem",
-                }}
-              >
-                <Users size={32} style={{ color: "var(--forest-green)" }} />
-                <div>
-                  <div
-                    style={{
-                      fontSize: "2rem",
-                      fontWeight: "bold",
-                      color: "var(--forest-green)",
-                    }}
-                  >
-                    47
-                  </div>
-                  <div style={{ color: "var(--text-light)" }}>
-                    Volunteers Registered
-                  </div>
-                </div>
-              </div>
-              <p>
-                We've received incredible interest from community members
-                wanting to volunteer! Our growing team includes students,
-                parents, teachers, and local environmental enthusiasts.
-              </p>
-              <a
-                href="/help#volunteer"
-                className="btn btn-outline"
-                style={{ marginTop: "1rem" }}
-              >
-                Join the Team
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

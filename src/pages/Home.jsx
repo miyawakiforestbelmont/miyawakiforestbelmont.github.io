@@ -467,9 +467,8 @@ function Home() {
                       <h3>Community Supporters</h3>
                       <p>
                         This project is made possible by the generous support of
-                        our community members, local businesses, and
-                        environmental advocates who believe in creating a
-                        greener future.
+                        our community members, and environmental advocates who
+                        believe in creating a greener future.
                       </p>
                       <br />
                       <div
