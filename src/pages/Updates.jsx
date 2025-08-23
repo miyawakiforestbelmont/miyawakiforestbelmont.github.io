@@ -18,7 +18,7 @@ function Updates() {
     {
       id: 1,
       date: "July 2025",
-      title: "Project Website Launch",
+      title: "Project Website Launch !!!",
       description:
         "Our official website is now live! Share it with friends and family to help spread awareness about our Miyawaki forest project.",
       status: "completed",
