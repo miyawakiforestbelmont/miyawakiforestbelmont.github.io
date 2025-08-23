@@ -96,10 +96,10 @@ function Gallery() {
   const photosPerPage = 6;
 
   // Calculate pagination
-  const totalPages = Math.ceil(fosterTreePeople.length / photosPerPage);
+  const totalPages = Math.ceil(fosterUpdates.length / photosPerPage);
   const startIndex = (currentPage - 1) * photosPerPage;
   const endIndex = startIndex + photosPerPage;
-  const currentPhotos = fosterTreePeople.slice(startIndex, endIndex);
+  const currentPhotos = fosterUpdates.slice(startIndex, endIndex);
 
   const goToNextPage = () => {
     setCurrentPage((prev) => (prev < totalPages ? prev + 1 : 1));
@@ -308,7 +308,7 @@ function Gallery() {
               >
                 <div className="gallery-image">
                   <img
-                    src={person.image}
+                    src={"src" + person.image}
                     alt={`${person.name} - Foster Tree Parent`}
                   />
                   <div className="gallery-overlay">
@@ -342,8 +342,8 @@ function Gallery() {
               }}
             >
               Showing {startIndex + 1}-
-              {Math.min(endIndex, fosterTreePeople.length)} of{" "}
-              {fosterTreePeople.length} foster tree parents
+              {Math.min(endIndex, fosterUpdatesPeople.length)} of{" "}
+              {fosterUpdates.length} foster tree parents
             </div>
           )}
         </div>
@@ -444,7 +444,7 @@ function Gallery() {
             </button>
             <div className="modal-body">
               <img
-                src={selectedPerson.image}
+                src={"src" + selectedPerson.image}
                 alt={selectedPerson.name}
                 className="modal-image"
               />
