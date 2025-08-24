@@ -197,8 +197,8 @@ function Gallery() {
                     <div className="gallery-image">
                       <img
                         src={
-                          item.image.startsWith("/")
-                            ? "src" + item.image
+                          item.image.startsWith("public/assets/images/")
+                            ? item.image.split("public/")[1]
                             : item.image
                         }
                         alt={`Progress update ${item.id}`}
