@@ -65,6 +65,18 @@
       "message": "Securing erosion control wattles",
       "location": "BHS",
       "image": "public/assets/images/20250710_130951.jpg"
+    },
+    {
+      "id": 250819001,
+      "image": "public/assets/images/skimmingimg_2835.jpg",
+      "message": "Digging site down 1 1/2 feet",
+      "location": "BHS"
+    },
+    {
+      "id": 25081900,
+      "image": "public/assets/images/img_2506.jpg",
+      "message": "Preparation for adding amendments to soil",
+      "location": "BHS"
     }
   ]
 }
