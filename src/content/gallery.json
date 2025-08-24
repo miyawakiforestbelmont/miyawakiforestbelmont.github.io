@@ -53,6 +53,18 @@
       "message": "Ready to relocate the native pollinator garden",
       "location": "BHS",
       "image": "public/assets/images/20250604_144143.jpg"
+    },
+    {
+      "id": 25071001,
+      "message": "Hartney Greymount installing erosion control",
+      "location": "BHS",
+      "image": "public/assets/images/20250710_121401.jpg"
+    },
+    {
+      "id": 25070102,
+      "message": "Securing erosion control wattles",
+      "location": "BHS",
+      "image": "public/assets/images/20250710_130951.jpg"
     }
   ]
 }
