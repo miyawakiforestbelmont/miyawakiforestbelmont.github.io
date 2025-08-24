@@ -77,6 +77,18 @@
       "image": "public/assets/images/img_2506.jpg",
       "message": "Preparation for adding amendments to soil",
       "location": "BHS"
+    },
+    {
+      "id": 25082201,
+      "message": "Mulch spread over amended soil",
+      "location": "BHS",
+      "image": "public/assets/images/img_7094.jpeg"
+    },
+    {
+      "id": 25082202,
+      "message": "Already a rainbow and a goldfinch visited the site",
+      "location": "BHS",
+      "image": "public/assets/images/img_7080.jpeg"
     }
   ]
 }
