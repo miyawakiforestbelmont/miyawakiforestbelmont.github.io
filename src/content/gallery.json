@@ -1,22 +1,10 @@
 {
   "images": [
     {
-      "id": 1,
-      "image": "/assets/images/heather_tree.jpg",
-      "message": "Heather with her adoptee",
-      "location": "Belmont"
-    },
-    {
       "id": 2,
       "image": "/assets/images/logo.png.png",
       "message": "test",
       "location": "bon"
-    },
-    {
-      "id": 3,
-      "message": "Eric at Habitat",
-      "location": "Habitat, Belmont",
-      "image": "public/assets/images/20250503_104935.jpg"
     },
     {
       "id": 25042301,
