@@ -1,6 +1,9 @@
 {
   "supporters": [
     {
+      "name": "Arts Specialties"
+    },
+    {
       "name": "Belmont Citizens Forum"
     },
     {
@@ -16,10 +19,19 @@
       "name": "Belmont School Committee"
     },
     {
+      "name": "Belmont Shade Tree Committee"
+    },
+    {
       "name": "Belmont Tree Warden"
     },
     {
+      "name": "Blackbear Cafe"
+    },
+    {
       "name": "Friends of Barbara Becker"
+    },
+    {
+      "name": "Growing Up"
     },
     {
       "name": "High School Principal Isaac Taylor"
@@ -32,12 +44,6 @@
     },
     {
       "name": "Sustainable Belmont"
-    },
-    {
-      "name": "Town Shade Tree Committee"
-    },
-    {
-      "name": "Arts Specialties"
     }
   ]
 }
