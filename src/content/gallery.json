@@ -1,12 +1,6 @@
 {
   "images": [
     {
-      "id": 2,
-      "image": "/assets/images/logo.png.png",
-      "message": "test",
-      "location": "bon"
-    },
-    {
       "id": 25042301,
       "image": "/assets/images/20250423_boltonflats.jpg",
       "message": "Bolton Flats field trip",
