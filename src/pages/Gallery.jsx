@@ -313,8 +313,8 @@ function Gallery() {
             <div className="modal-body">
               <img
                 src={
-                  selectedImage.image.startsWith("/")
-                    ? "src" + selectedImage.image
+                  selectedImage.image.startsWith("public/")
+                    ? selectedImage.image.split("public/")[1]
                     : selectedImage.image
                 }
                 alt={`Progress update ${selectedImage.id}`}

@@ -288,8 +288,8 @@ function Fosters() {
                 <div className="gallery-image">
                   <img
                     src={
-                      person.image.startsWith("/")
-                        ? "src" + person.image
+                      person.image.startsWith("public/")
+                        ? person.image.split("public/")[1]
                         : person.image
                     }
                     alt={`${person.name} - Foster Tree Parent`}
@@ -428,8 +428,8 @@ function Fosters() {
             <div className="modal-body">
               <img
                 src={
-                  selectedPerson.image.startsWith("/")
-                    ? "src" + selectedPerson.image
+                  selectedPerson.image.startsWith("public/")
+                    ? selectedPerson.image.split("public/")[1]
                     : selectedPerson.image
                 }
                 alt={selectedPerson.name}
