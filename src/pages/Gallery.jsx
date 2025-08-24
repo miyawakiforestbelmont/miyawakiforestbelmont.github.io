@@ -197,9 +197,7 @@ function Gallery() {
                     <div className="gallery-image">
                       <img
                         src={
-                          item.image.startsWith("/")
-                            ? "src" + item.image
-                            : item.image
+                          item.image.startsWith("/") ? item.image : item.image
                         }
                         alt={`Progress update ${item.id}`}
                         // style={{
@@ -314,7 +312,7 @@ function Gallery() {
               <img
                 src={
                   selectedImage.image.startsWith("/")
-                    ? "src" + selectedImage.image
+                    ? selectedImage.image
                     : selectedImage.image
                 }
                 alt={`Progress update ${selectedImage.id}`}
