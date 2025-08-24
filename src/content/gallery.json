@@ -14,21 +14,21 @@
     },
     {
       "id": 3,
-      "message": "3",
-      "location": "3",
+      "message": "Erik at Habitat",
+      "location": "Habitat, Belmont",
       "image": "public/assets/images/20250503_104935.jpg"
+    },
+    {
+      "id": 25050423,
+      "image": "/assets/images/20250423_boltonflats.jpg",
+      "message": "Bolton Flats field trip",
+      "location": "Lancaster, MA"
     },
     {
       "id": 25040101,
       "image": "/assets/images/img_0237.jpg",
       "message": "testing 1234",
       "location": "Belmont"
-    },
-    {
-      "id": 25050401,
-      "image": "/assets/images/20250423_boltonflats.jpg",
-      "message": "Bolton Flats field trip",
-      "location": "Lancaster, MA"
     },
     {
       "id": 25062701,
