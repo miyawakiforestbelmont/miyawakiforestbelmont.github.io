@@ -13,10 +13,10 @@
       "location": "bon"
     },
     {
-      "id": 25050401,
-      "image": "/assets/images/20250423_boltonflats.jpg",
-      "message": "Bolton Flats field trip",
-      "location": "Bolton Flats"
+      "id": 3,
+      "message": "3",
+      "location": "3",
+      "image": "public/assets/images/20250503_104935.jpg"
     },
     {
       "id": 25040101,
@@ -25,16 +25,16 @@
       "location": "Belmont"
     },
     {
+      "id": 25050401,
+      "image": "/assets/images/20250423_boltonflats.jpg",
+      "message": "Bolton Flats field trip",
+      "location": "Lancaster, MA"
+    },
+    {
       "id": 25062701,
       "image": "/assets/images/v7-d95k4.jpg",
       "message": "more seedlings",
       "location": "test"
-    },
-    {
-      "id": 3,
-      "message": "3",
-      "location": "3",
-      "image": "public/assets/images/20250503_104935.jpg"
     }
   ]
 }
