@@ -304,7 +304,7 @@ function Fosters() {
                 <div className="gallery-info">
                   <h4>{person.name}</h4>
                   <p className="tree-type">{person.treeType}</p>
-                  <p className="message">"{person.message}"</p>
+                  <p className="message">{person.message}</p>
                   <div className="location">
                     <MapPin size={14} />
                     <span>{person.location}</span>

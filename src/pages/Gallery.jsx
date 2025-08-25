@@ -218,7 +218,7 @@ function Gallery() {
                     </div>
                     <div className="gallery-info">
                       <h4>Progress Update #{item.id}</h4>
-                      <p className="message">"{item.message}"</p>
+                      <p className="message">{item.message}</p>
                       <div className="location">
                         <MapPin size={14} />
                         <span>{item.location}</span>
