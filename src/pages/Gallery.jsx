@@ -18,7 +18,7 @@ function Gallery() {
       try {
         const galleryData = await import("../content/gallery.json");
         if (galleryData.images) {
-          setGalleryImages(galleryData.images);
+          setGalleryImages(galleryData.images.reverse());
         }
       } catch (error) {
         console.log("No gallery.json found, using empty array");
@@ -131,15 +131,15 @@ function Gallery() {
                   >
                     {Array.from({ length: totalPages }, (_, index) => (
                       <button
-                        key={totalPages - index + 1}
-                        onClick={() => goToPage(totalPages - index + 1)}
+                        key={index + 1}
+                        onClick={() => goToPage(index + 1)}
                         style={{
                           width: "35px",
                           height: "35px",
                           borderRadius: "50%",
                           border: "none",
                           backgroundColor:
-                            currentPage === totalPages - index + 1
+                            currentPage === index + 1
                               ? "var(--forest-green)"
                               : "var(--sage-green)",
                           color: "white",
@@ -147,12 +147,12 @@ function Gallery() {
                           fontSize: "0.9rem",
                           transition: "all 0.3s ease",
                           transform:
-                            currentPage === totalPages - index + 1
+                            currentPage === index + 1
                               ? "scale(1.1)"
                               : "scale(1)",
                         }}
                       >
-                        {totalPages - index + 1}
+                        {index + 1}
                       </button>
                     ))}
                   </div>
