@@ -67,7 +67,7 @@ function Gallery() {
       {/* Gallery Grid */}
       <section>
         <div className="container">
-          <h2>General Updates</h2>
+          <h2>Photos</h2>
 
           {galleryImages.length === 0 ? (
             <div
@@ -131,15 +131,15 @@ function Gallery() {
                   >
                     {Array.from({ length: totalPages }, (_, index) => (
                       <button
-                        key={index + 1}
-                        onClick={() => goToPage(index + 1)}
+                        key={totalPages - index + 1}
+                        onClick={() => goToPage(totalPages - index + 1)}
                         style={{
                           width: "35px",
                           height: "35px",
                           borderRadius: "50%",
                           border: "none",
                           backgroundColor:
-                            currentPage === index + 1
+                            currentPage === totalPages - index + 1
                               ? "var(--forest-green)"
                               : "var(--sage-green)",
                           color: "white",
@@ -147,12 +147,12 @@ function Gallery() {
                           fontSize: "0.9rem",
                           transition: "all 0.3s ease",
                           transform:
-                            currentPage === index + 1
+                            currentPage === totalPages - index + 1
                               ? "scale(1.1)"
                               : "scale(1)",
                         }}
                       >
-                        {index + 1}
+                        {totalPages - index + 1}
                       </button>
                     ))}
                   </div>
