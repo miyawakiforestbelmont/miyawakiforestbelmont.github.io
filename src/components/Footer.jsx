@@ -50,7 +50,7 @@ function Footer() {
           <div className="footer-section">
             <h4>Connect With Us</h4>
             <div className="social-links">
-              <a href="mailto:contact@miyawakirest.org" aria-label="Email">
+              <a href="mailto:miniforestbelmont@gmail.com" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>

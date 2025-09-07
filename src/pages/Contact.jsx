@@ -303,8 +303,8 @@ function Contact() {
               <h4>Have questions about volunteering and more?</h4>
               <p>
                 Contact Us:{" "}
-                <a href="mailto:info@miyawakiforestaction.org">
-                  info@miyawakiforestaction.org
+                <a href="mailto:miniforestbelmont@gmail.com">
+                  miniforestbelmont@gmail.com
                 </a>
               </p>
             </div>
