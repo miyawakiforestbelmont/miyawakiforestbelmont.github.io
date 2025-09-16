@@ -6,24 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Join the Miyawaki Forest Action Belmont to plant a 3,000 sq. ft. native forest and support biodiversity in our community."
+      content="Join the Miyawaki Forest Action Belmont to plant a 3,000 sq. ft. native forest and support biodiversity in our community. Let's create a BHS mini-forest!"
     />
     <meta
       name="keywords"
-      content="Miyawaki forest, native trees, biodiversity, environmental action, community project, club, belmont"
+      content="Miyawaki forest, native trees, biodiversity, environmental action, community project, club, belmont, bhs mini-forest, bhs, high school, mini-forest"
     />
-    <title>Miyawaki Forest Action Belmont</title>
+    <title>
+      Miyawaki Forest Action Belmont | BHS mini-forest Official Site
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-DDqafarh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BTi4n4h3.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- <script type="module" crossorigin src="/assets/index-DDqafarh.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BTi4n4h3.css" /> -->
   </head>
   <body>
-    <div id="root">
+    <div id="root">
+      <script type="module" crossorigin src="src/main.jsx"></script>
     </div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
