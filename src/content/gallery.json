@@ -71,6 +71,12 @@
       "message": "Already a rainbow and a goldfinch visited the site",
       "location": "BHS",
       "image": "public/assets/images/img_7080.jpeg"
+    },
+    {
+      "id": 100401,
+      "image": "https://photos.app.goo.gl/vERrTcCNHMKKQbA46",
+      "message": "Photo booth forest-makers",
+      "location": "BHS"
     }
   ]
 }
