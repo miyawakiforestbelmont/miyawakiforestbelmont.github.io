@@ -1,18 +1,6 @@
 {
   "images": [
     {
-      "id": 25042301,
-      "image": "/assets/images/20250423_boltonflats.jpg",
-      "message": "Bolton Flats field trip",
-      "location": "Lancaster, MA"
-    },
-    {
-      "id": 25042501,
-      "image": "/assets/images/img_0237.jpg",
-      "message": "Seedlings potted and ready for fostering",
-      "location": "Belmont"
-    },
-    {
       "id": 25050101,
       "image": "/assets/images/v7-d95k4.jpg",
       "message": "Seedlings for fostering",
@@ -74,7 +62,7 @@
     },
     {
       "id": 100401,
-      "image": "https://photos.app.goo.gl/vERrTcCNHMKKQbA46",
+      "image": "public/assets/images/dsc_3771.jpg",
       "message": "Photo booth forest-makers",
       "location": "BHS"
     }
