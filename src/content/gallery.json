@@ -59,6 +59,12 @@
       "image": "public/assets/images/dsc_3771.jpg",
       "message": "Photo booth forest-makers",
       "location": "BHS"
+    },
+    {
+      "id": 100401,
+      "image": "public/assets/images/dji_0349-2.jpg",
+      "message": "Prof. N. Geron's drone image before planting",
+      "location": "Belmont"
     }
   ]
 }
